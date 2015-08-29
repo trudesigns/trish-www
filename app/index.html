@@ -14,6 +14,8 @@
     <!-- build:css(.tmp) styles/mantra.css -->
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/parallax.css">
     <!-- endbuild -->
   </head>
   <body ng-app="app">
@@ -22,32 +24,38 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavCtrl">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" ng-click="isCollapsed=!isCollapsed">
-              <i class="fa fa-bars fa-lg"></i>
-            </button>
-            <a class="navbar-brand" href ng-click="goTo('start')"><i class="fa fa-home fa-lg"></i></a>
-          </div>
-          <div ng-class="{collapse:isCollapsed}">
-            <ul class="nav navbar-nav navbar-right">
-              <li ng-class="{active:path==='/'}"><a href ng-click="goTo('start')">Start</a></li>
-              <li ng-class="{active:path==='/about'}"><a href ng-click="goTo('about')">About</a></li>
-            </ul>
+    <div ng-controller="NavCtrl">
+      <div class="header" ng-hide="path==='/'">
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" ng-click="isCollapsed=!isCollapsed">
+                <i class="fa fa-bars fa-lg"></i>
+              </button>
+              <a class="navbar-brand" href ng-click="goTo('/')"><i class="fa fa-home fa-lg"></i></a>
+            </div>
+            <div ng-class="{collapse:isCollapsed}">
+              <ul class="nav navbar-nav navbar-right">
+                <li ng-class="{active:path==='/'}"><a href ng-click="goTo('/')">Start</a></li>
+                <li ng-class="{active:path==='/about'}"><a href ng-click="goTo('about')">About</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div ng-view=""></div>
-    </div>
+    <div ng-view=""></div>
 
     <div class="footer">
       <div class="container">
-        <p><span class="fa fa-heart"></span> from the Yeoman team</p>
+        <div class="row">
+          <div class="col-sm-3">
+            <ul class="nav nav-pills nav-stacked">
+              <li><a ng-href="#/about"><i class="fa fa-info-circle fa-lg"></i> About</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 

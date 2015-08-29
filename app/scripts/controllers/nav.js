@@ -14,16 +14,16 @@ angular.module('app')
 
     $scope.location = $location;
 
+    $scope.goTo = function (path) {
+      $location.path(path);
+      $scope.isCollapsed = true;
+    };
+
     $scope.$watch('location.path()', function (newPath) {
       $scope.path = newPath;
       try {
         document.body.scrollTop = document.documentElement.scrollTop = 0;
       } catch (e) {}
     });
-
-    $scope.goTo = function (path) {
-      $location.path(path);
-      $scope.isCollapsed = true;
-    };
 
   });
