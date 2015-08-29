@@ -2,15 +2,16 @@
 
 /**
  * @ngdoc overview
- * @name trishWwwApp
+ * @name app
  * @description
- * # trishWwwApp
+ * # app
  *
  * Main module of the application.
  */
 angular
-  .module('trishWwwApp', [
-    'ngRoute'
+  .module('app', [
+    'ngRoute',
+    'config'
   ])
   .config(function ($routeProvider) {
     $routeProvider

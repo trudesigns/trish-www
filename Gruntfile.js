@@ -19,17 +19,183 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn'
   });
 
+  var configFile = grunt.file.readJSON('config.json');
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
 
+  grunt.loadNpmTasks('grunt-ng-constant');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-ftp-deploy');
+  grunt.loadNpmTasks('grunt-prompt');
+  grunt.loadNpmTasks('grunt-replace');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
     // Project settings
     yeoman: appConfig,
+
+    replace: {
+      stage: {
+        options: {
+          patterns: [{
+            json: {'gaKey': configFile.stage.gaKey}
+          }]
+        },
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ['<%= yeoman.dist %>/index.html'],
+          dest: '<%= yeoman.dist %>/'
+        }]
+      },
+      production: {
+        options: {
+          patterns: [{
+            json: {'gaKey': configFile.production.gaKey}
+          }]
+        },
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ['<%= yeoman.dist %>/index.html'],
+          dest: '<%= yeoman.dist %>/'
+        }]
+      }
+    },
+
+    prompt: {
+      deploy: {
+        options: {
+          questions: [
+            {
+              config: 'deploytarget',
+              name: 'deploytarget',
+              type: 'list',
+              message: 'Where would you like to deploy?',
+              default: 'stage',
+              choices: ['stage', 'production']
+            },
+            {
+              name: 'confirmproduction',
+              type: 'list',
+              message: 'Are you sure you want to deploy to production?' + ' This action is irreversible!'.red,
+              default: 'no',
+              choices: ['no', 'yes'],
+              when: function (answers) {
+                return answers.deploytarget === 'production';
+              }
+            }
+          ],
+          then: function (answers) {
+            if ((answers.deploytarget === 'stage') || (answers.deploytarget === 'production' && answers.confirmproduction === 'yes')) {
+              grunt.task.run(['ngconstant:' + answers.deploytarget]);
+              grunt.task.run('build');
+              grunt.task.run('replace:' + answers.deploytarget);
+              grunt.task.run('ftp-deploy:' + answers.deploytarget);
+              grunt.task.run('ngconstant:dev');
+            }
+          }
+        }
+      }
+    },
+
+    ngconstant: {
+      dev: {
+        options: {
+          dest: '<%= yeoman.app %>/scripts/services/config.js',
+          name: 'config'
+        },
+        constants: {
+          config: configFile.dev
+        },
+        values: {
+          debug: true
+        }
+      },
+      stage: {
+        options: {
+          dest: '<%= yeoman.app %>/scripts/services/config.js',
+          name: 'config'
+        },
+        constants: {
+          config: configFile.stage
+        },
+        values: {
+          debug: true
+        }
+      },
+      production: {
+        options: {
+          dest: '<%= yeoman.app %>/scripts/services/config.js',
+          name: 'config'
+        },
+        constants: {
+          config: configFile.production
+        }
+      }
+    },
+
+    htmlSnapshot: {
+      debug: {
+        options: {
+          snapshotPath: 'snapshots/',
+          sitePath: 'http://localhost:9000/',
+          msWaitForPages: 1000,
+          urls: [
+            '/',
+            '/about'
+          ]
+        }
+      },
+      prod: {
+        options: {}
+      }
+    },
+
+    'ftp-deploy': {
+      stage: {
+        auth: {
+          host: 'ftp.thehost.se',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: 'dist/',
+        dest: 'trish-stage/',
+        exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/.htaccess']
+      },
+      production: {
+        auth: {
+          host: 'ftp.thehost.se',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: 'dist/',
+        dest: 'trish/',
+        exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/.htaccess']
+      }
+    },
+
+    less: {
+      bootstrap: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/bootstrap',
+        src: ['bootstrap.less'],
+        dest: '<%= yeoman.app %>/styles',
+        ext: '.css'
+      },
+      main: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/less',
+        src: ['*.less'],
+        dest: '<%= yeoman.app %>/styles',
+        ext: '.css'
+      }
+    },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -64,6 +230,18 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      },
+      less_bootstrap: {
+        files: ['<%= yeoman.app %>/bootstrap/{,*/}*.less'],
+        tasks: ['less:bootstrap']
+      },
+      less_main: {
+        files: ['<%= yeoman.app %>/less/*.less'],
+        tasks: ['less:main']
+      },
+      config: {
+        files: ['config.json'],
+        tasks: ['ngconstant:dev']
       }
     },
 
@@ -210,7 +388,7 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/styles/fonts/*'
+          '<%= yeoman.dist %>/fonts/*'
         ]
       }
     },
@@ -319,7 +497,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'trishWwwApp',
+          module: 'app',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },
@@ -362,13 +540,20 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'fonts/{,*/}*.*'
           ]
         }, {
           expand: true,
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
+        }, {
+          //for font-awesome
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/components-font-awesome',
+          src: ['fonts/*.*'],
+          dest: '<%= yeoman.dist %>'
         }]
       },
       styles: {
@@ -456,4 +641,17 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('stage', [
+    'ngconstant:stage',
+    'build',
+    'replace:stage',
+    'ftp-deploy:stage',
+    'ngconstant:dev'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'prompt:deploy'
+  ]);
+
 };
