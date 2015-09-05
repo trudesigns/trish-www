@@ -10,43 +10,46 @@ body {
   padding: 0;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page footer */
-.footer {
-  background-color: #555;
-  padding-top: 40px;
-  padding-bottom: 60px;
-  color: #fff;
-
-  .nav {
-    font-size: 1.5em;
-    a, &:visited {
-      color: #fff;
-      &:hover, &:focus, &:active {
-        color: #FF7E00;
-      }
-    }
-  }
-}
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .navbar {
+    text-align: center;
+
+    ul.navbar-nav {
+      display: inline;
+      float: none;
+      li {
+        display: inline;
+        float: none;
+        a {
+          display: inline;
+          float: none;
+          line-height: 50px;
+        }
+      }
+    }
+
     .collapse {
       display: block;
     }
+    .navbar-brand {
+      display: none;
+    }
   }
+}
 
-  /* Remove the padding we set earlier */
-  .header,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
+/* First page: Splash Page */
+#splash-page {
+  min-height: 100%;
+  min-height: 100vh;
+  background-color: #eee;
+
+  #splash-inner {
+    position: absolute;
+    top: 50%;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    margin-top: -100px;
   }
 }

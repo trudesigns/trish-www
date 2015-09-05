@@ -2,28 +2,23 @@
 
 /**
  * @ngdoc function
- * @name app.controller:NavCtrl
+ * @name trishApp.controller:NavCtrl
  * @description
  * # NavCtrl
- * Controller of the app
+ * Controller of the trishApp
  */
-angular.module('app')
-  .controller('NavCtrl', function ($scope, $location) {
+angular.module('trishApp')
+  .controller('NavCtrl', function ($scope, $document) {
 
-    $scope.isCollapsed = true;
-
-    $scope.location = $location;
-
-    $scope.goTo = function (path) {
-      $location.path(path);
-      $scope.isCollapsed = true;
+    $scope.nav = {
+      isCollapsed : true,
+      isScrolledDown : null,
+      scrollToTop : function () {
+        console.log('asd');
+        $document.scrollTop(0, 500).then(function () {
+          // do something...
+        });
+      }
     };
-
-    $scope.$watch('location.path()', function (newPath) {
-      $scope.path = newPath;
-      try {
-        document.body.scrollTop = document.documentElement.scrollTop = 0;
-      } catch (e) {}
-    });
 
   });

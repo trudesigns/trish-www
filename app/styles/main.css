@@ -7,43 +7,42 @@
 body {
   padding: 0;
 }
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-/* Custom page footer */
-.footer {
-  background-color: #555;
-  padding-top: 40px;
-  padding-bottom: 60px;
-  color: #fff;
-}
-.footer .nav {
-  font-size: 1.5em;
-}
-.footer .nav a,
-.footer .nav:visited {
-  color: #fff;
-}
-.footer .nav a:hover,
-.footer .nav:visited:hover,
-.footer .nav a:focus,
-.footer .nav:visited:focus,
-.footer .nav a:active,
-.footer .nav:visited:active {
-  color: #FF7E00;
-}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  .navbar {
+    text-align: center;
+  }
+  .navbar ul.navbar-nav {
+    display: inline;
+    float: none;
+  }
+  .navbar ul.navbar-nav li {
+    display: inline;
+    float: none;
+  }
+  .navbar ul.navbar-nav li a {
+    display: inline;
+    float: none;
+    line-height: 50px;
+  }
   .navbar .collapse {
     display: block;
   }
-  /* Remove the padding we set earlier */
-  .header,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
+  .navbar .navbar-brand {
+    display: none;
   }
+}
+/* First page: Splash Page */
+#splash-page {
+  min-height: 100%;
+  min-height: 100vh;
+  background-color: #eee;
+}
+#splash-page #splash-inner {
+  position: absolute;
+  top: 50%;
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  margin-top: -100px;
 }
