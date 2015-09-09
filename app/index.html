@@ -42,9 +42,15 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div collapse="nav.isCollapsed">
           <ul class="nav navbar-nav">
-            <li><a du-smooth-scroll du-scrollspy offset="80" ng-click="nav.isCollapsed = true" href="#my-work">My Work</a></li>
-            <li><a du-smooth-scroll du-scrollspy offset="80" ng-click="nav.isCollapsed = true" href="#about-me">About Me</a></li>
-            <li><a du-smooth-scroll du-scrollspy offset="80" ng-click="nav.isCollapsed = true" href="#work-with-me">Work With Me</a></li>
+            <li ng-class="{active: $location.path()=='my-work'}">
+              <a du-smooth-scroll du-scrollspy ng-href="#my-work" ng-click="nav.isCollapsed = true">My Work</a>
+            </li>
+            <li ng-class="{active: $location.path()=='about-me'}">
+              <a du-smooth-scroll du-scrollspy ng-href="#about-me" ng-click="nav.isCollapsed = true">About Me</a>
+            </li>
+            <li ng-class="{active: $location.path()=='work-with-me'}">
+              <a du-smooth-scroll du-scrollspy ng-href="#work-with-me" ng-click="nav.isCollapsed = true">Work With Me</a>
+            </li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

@@ -12,7 +12,7 @@ angular.module('trishApp')
 
     $scope.nav = {
       isCollapsed : true,
-      isScrolledDown : null,
+      isScrolledDown : true, // TODO: Should be set on window scroll event.
       scrollToTop : function () {
         console.log('asd');
         $document.scrollTop(0, 500).then(function () {
