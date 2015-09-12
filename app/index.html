@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="trishApp">
+  <body ng-app="trishApp" ng-controller="MainCtrl">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -28,8 +28,10 @@
       </div>
     </div>
 
+    <div id="beginIsScrolledDown"></div>
+
     <!-- Add your site or application content here -->
-    <nav class="navbar navbar-default" ng-class="{'navbar-fixed-top': nav.isScrolledDown}" ng-controller="NavCtrl">
+    <nav id="navbar" class="navbar navbar-default" ng-class="{'navbar-fixed-top': nav.isScrolledDown}">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -56,7 +58,7 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container">
+    <div class="container" ng-class="{'extra-margin-top': nav.isScrolledDown}" >
 
       <section id="my-work">
         <h1>My Work</h1>
@@ -182,7 +184,7 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/services/config.js"></script>
-    <script src="scripts/controllers/nav.js"></script>
+    <script src="scripts/controllers/main.js"></script>
     <!-- endbuild -->
 
 </body>

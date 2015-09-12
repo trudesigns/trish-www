@@ -7,6 +7,9 @@
 body {
   padding: 0;
 }
+.extra-margin-top {
+  margin-top: 70px;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .navbar {
