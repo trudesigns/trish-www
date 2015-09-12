@@ -2,29 +2,15 @@
 
 /**
  * @ngdoc overview
- * @name trishWwwApp
+ * @name app
  * @description
- * # trishWwwApp
+ * # app
  *
  * Main module of the application.
  */
 angular
-  .module('trishWwwApp', [
-    'ngRoute'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+  .module('trishApp', [
+    'config',
+    'duScroll',
+    'ui.bootstrap'
+  ]);

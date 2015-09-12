@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "basePath": "/",
+    "siteUrl": "http://localhost:9000/",
+    "gaKey": "UA-XXXXXXXX-X"
+  },
+  "stage": {
+    "basePath": "/",
+    "siteUrl": "http://www.trish-stage.thehost.se/",
+    "gaKey": "UA-XXXXXXXX-X"
+  },
+  "production": {
+    "basePath": "/",
+    "siteUrl": "http://www.trish.thehost.se/",
+    "gaKey": "UA-XXXXXXXX-X"
+  }
+}

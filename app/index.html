@@ -8,48 +8,157 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
+    <!-- build:css(.tmp) styles/mantra.css -->
+    <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="trishWwwApp">
+  <body ng-app="trishApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <a class="navbar-brand" href="#/">trishWww</a>
-          </div>
-
-          <div class="collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
+    <div id="splash-page">
+      <div id="splash-inner">
+        <h1> Trish </h1>
+        <h4>UX and UI Designer</h4>
       </div>
     </div>
+
+    <!-- Add your site or application content here -->
+    <nav class="navbar navbar-default" ng-class="{'navbar-fixed-top': nav.isScrolledDown}" ng-controller="NavCtrl">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" ng-click="nav.isCollapsed = !nav.isCollapsed">
+            <span class="fa fa-bars fa-lg"></span>
+          </button>
+          <a ng-href="#/" ng-click="nav.scrollToTop()" class="navbar-brand">MENUE</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div collapse="nav.isCollapsed">
+          <ul class="nav navbar-nav">
+            <li ng-class="{active: $location.path()=='my-work'}">
+              <a du-smooth-scroll du-scrollspy ng-href="#my-work" ng-click="nav.isCollapsed = true">My Work</a>
+            </li>
+            <li ng-class="{active: $location.path()=='about-me'}">
+              <a du-smooth-scroll du-scrollspy ng-href="#about-me" ng-click="nav.isCollapsed = true">About Me</a>
+            </li>
+            <li ng-class="{active: $location.path()=='work-with-me'}">
+              <a du-smooth-scroll du-scrollspy ng-href="#work-with-me" ng-click="nav.isCollapsed = true">Work With Me</a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
     <div class="container">
-    <div ng-view=""></div>
+
+      <section id="my-work">
+        <h1>My Work</h1>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <hr style="border-width:20px;border-color:#f99;"><hr style="border-width:20px;border-color:#f99;">
+              <hr style="border-width:20px;border-color:#f99;"><hr style="border-width:20px;border-color:#f99;">
+              <h2>My Project</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <hr style="border-width:20px;border-color:#f99;"><hr style="border-width:20px;border-color:#f99;">
+              <hr style="border-width:20px;border-color:#f99;"><hr style="border-width:20px;border-color:#f99;">
+              <h2>My Project</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <hr style="border-width:20px;border-color:#f99;"><hr style="border-width:20px;border-color:#f99;">
+              <hr style="border-width:20px;border-color:#f99;"><hr style="border-width:20px;border-color:#f99;">
+              <h2>My Project</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <hr style="border-width:20px;border-color:#f99;"><hr style="border-width:20px;border-color:#f99;">
+              <hr style="border-width:20px;border-color:#f99;"><hr style="border-width:20px;border-color:#f99;">
+              <h2>My Project</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about-me">
+        <h1>About Me</h1>
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <h3>My Attribute</h3>
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h3>My Attribute</h3>
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h3>My Attribute</h3>
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h3>My Attribute</h3>
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+          </div>
+        </div>
+      </section>
+
+      <section id="work-with-me">
+        <h1>Contact</h1>
+        <div class="row">
+          <div class="col-sm-6">
+            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p> <hr style="border-width:20px;"><hr style="border-width:20px;">
+            <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p></blockquote>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+          </div>
+          <div class="col-sm-6">
+            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p> <hr style="border-width:20px;"><hr style="border-width:20px;">
+            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p> <hr style="border-width:20px;"><hr style="border-width:20px;">
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <blockquote class="blockquote-reverse">
+            <p>Lorem ipsum...</p>
+            </blockquote>
+        </div>
+
+      </section>
+
     </div>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
-
+    <hr style="border-width:20px;">
+    <hr style="border-width:20px;">
+    <hr style="border-width:20px;">
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -58,21 +167,23 @@
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
        }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
+       ga('create', '@@gaKey');
        ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/config.js"></script>
+    <script src="scripts/controllers/nav.js"></script>
+    <!-- endbuild -->
+
 </body>
 </html>
