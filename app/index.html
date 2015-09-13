@@ -32,8 +32,14 @@
     <!--
     /**
      * Navbar
+     *
+     * This element is for handling scroll and nav correlations.
      */ -->
-    <div id="beginIsScrolledDown"></div>
+    <div id="beginIsScrolledDown" ng-class="{'navbar-equal-height-fix': ctrl.isScrolledDown}"></div>
+    <!--
+    /**
+     * Bootstrap navbar component
+     */ -->
     <!-- Add your site or application content here -->
     <nav id="navbar" class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': ctrl.isScrolledDown}">
       <div class="container-fluid">
@@ -46,13 +52,13 @@
         <div collapse="ctrl.isCollapsed">
           <ul class="nav navbar-nav">
             <li ng-class="{active: $location.path()=='my-work'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="ctrl.isCollapsed = true">My WoRK</a>
+              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="ctrl.toggleNav(true)">My WoRK</a>
             </li>
             <li ng-class="{active: $location.path()=='about-me'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#about-me" ng-click="ctrl.isCollapsed = true">ABOUT me</a>
+              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#about-me" ng-click="ctrl.toggleNav(true)">ABOUT me</a>
             </li>
             <li ng-class="{active: $location.path()=='work-with-me'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#work-with-me" ng-click="ctrl.isCollapsed = true">work with me</a>
+              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#work-with-me" ng-click="ctrl.toggleNav(true)">work with me</a>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->

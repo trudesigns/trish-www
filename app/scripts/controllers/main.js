@@ -8,12 +8,11 @@
  * Controller of the trishApp
  */
 angular.module('trishApp')
-  .controller('MainCtrl', function ($scope, $document, $window, $timeout) {
+  .controller('MainCtrl', function ($scope, $document, $window) {
 
     var ctrl = this;
     var document = $document[0];
     var anchorElement = document.getElementById('beginIsScrolledDown');
-    var marginElement = document.getElementById('extraMarginTop');
     var navElement = document.getElementById('navbar');
 
     function _init () {
@@ -26,31 +25,22 @@ angular.module('trishApp')
         ctrl.isScrolledDown = true;
       } else {
         ctrl.isScrolledDown = false;
-      }
-    }
-
-    function _updateMargins () {
-      if (ctrl.isScrolledDown) {
-        angular.element(marginElement).css('margin-top', (navElement.offsetHeight + 20) + 'px');
-      } else {
-        angular.element(marginElement).css('margin-top', '0px');
+        ctrl.isCollapsed = true;
       }
     }
 
     function _onScroll () {
       _setIsScrolledDown();
-      _updateMargins();
+      toggleNav(true);
       $scope.$digest();
     }
 
-    function toggleNav () {
-      ctrl.isCollapsed = !ctrl.isCollapsed;
-      _setIsScrolledDown();
-      $timeout(_updateMargins);
+    function toggleNav (collapse) {
+      ctrl.isCollapsed = collapse || !ctrl.isCollapsed;
     }
 
     function scrollToTop () {
-      $document.scrollTop(0, 500).then(function () {
+      document.scrollTop(0, 500).then(function () {
         // do something...
       });
     }
