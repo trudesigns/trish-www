@@ -83,9 +83,6 @@ body {
   -moz-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-.extra-margin-top {
-  margin-top: 70px;
-}
 #splash-page {
   background-color: #fff;
 }

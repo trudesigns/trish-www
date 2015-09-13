@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 /**
  * @ngdoc function
@@ -8,28 +8,60 @@
  * Controller of the trishApp
  */
 angular.module('trishApp')
-  .controller('MainCtrl', function ($scope, $document, $window) {
+  .controller('MainCtrl', function ($scope, $document, $window, $timeout) {
 
-    $scope.nav = {
+    var ctrl = this;
+    var document = $document[0];
+    var anchorElement = document.getElementById('beginIsScrolledDown');
+    var marginElement = document.getElementById('extraMarginTop');
+    var navElement = document.getElementById('navbar');
+
+    function _init () {
+      angular.element($window).bind('scroll', _onScroll);
+      _setIsScrolledDown();
+    }
+
+    function _setIsScrolledDown () {
+      if (anchorElement.getBoundingClientRect().top < 0) {
+        ctrl.isScrolledDown = true;
+      } else {
+        ctrl.isScrolledDown = false;
+      }
+    }
+
+    function _updateMargins () {
+      if (ctrl.isScrolledDown) {
+        angular.element(marginElement).css('margin-top', (navElement.offsetHeight + 20) + 'px');
+      } else {
+        angular.element(marginElement).css('margin-top', '0px');
+      }
+    }
+
+    function _onScroll () {
+      _setIsScrolledDown();
+      _updateMargins();
+      $scope.$digest();
+    }
+
+    function toggleNav () {
+      ctrl.isCollapsed = !ctrl.isCollapsed;
+      _setIsScrolledDown();
+      $timeout(_updateMargins);
+    }
+
+    function scrollToTop () {
+      $document.scrollTop(0, 500).then(function () {
+        // do something...
+      });
+    }
+
+    angular.extend(ctrl, {
       isCollapsed : true,
       isScrolledDown : null,
-      scrollToTop : function () {
-        console.log('asd');
-        $document.scrollTop(0, 500).then(function () {
-          // do something...
-        });
-      }
-    };
-
-    var anchorElement = $document[0].getElementById('beginIsScrolledDown');
-
-    angular.element($window).bind('scroll', function () {
-      if (anchorElement.getBoundingClientRect().top < 1) {
-        $scope.nav.isScrolledDown = true;
-      } else {
-        $scope.nav.isScrolledDown = false;
-      }
-      $scope.$apply();
+      toggleNav: toggleNav,
+      scrollToTop : scrollToTop
     });
+
+    _init();
 
   });

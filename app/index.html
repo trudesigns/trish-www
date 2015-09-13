@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="trishApp" ng-controller="MainCtrl">
+  <body ng-app="trishApp" ng-controller="MainCtrl as ctrl">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -28,31 +28,31 @@
     <div id="beginIsScrolledDown"></div>
 
     <!-- Add your site or application content here -->
-    <nav id="navbar" class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': nav.isScrolledDown}">
+    <nav id="navbar" class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': ctrl.isScrolledDown}">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" ng-class="{'cross': !nav.isCollapsed}" ng-click="nav.isCollapsed = !nav.isCollapsed">MENU</button>
+          <button type="button" class="navbar-toggle" ng-class="{'cross': !ctrl.isCollapsed}" ng-click="ctrl.toggleNav()">MENU</button>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div collapse="nav.isCollapsed">
+        <div collapse="ctrl.isCollapsed">
           <ul class="nav navbar-nav">
             <li ng-class="{active: $location.path()=='my-work'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="nav.isCollapsed = true">My WoRK</a>
+              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="ctrl.isCollapsed = true">My WoRK</a>
             </li>
             <li ng-class="{active: $location.path()=='about-me'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#about-me" ng-click="nav.isCollapsed = true">ABOUT me</a>
+              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#about-me" ng-click="ctrl.isCollapsed = true">ABOUT me</a>
             </li>
             <li ng-class="{active: $location.path()=='work-with-me'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#work-with-me" ng-click="nav.isCollapsed = true">work with me</a>
+              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#work-with-me" ng-click="ctrl.isCollapsed = true">work with me</a>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container-fluid" ng-class="{'extra-margin-top': nav.isScrolledDown}" >
+    <div class="container-fluid" id="extraMarginTop">
 
       <section id="my-work"><!-- section 2 -->
         <h1>My Work</h1>
