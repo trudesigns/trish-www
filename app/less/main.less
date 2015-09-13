@@ -1,3 +1,21 @@
+// Mix Classes
+.section-h1 {
+  background: url('/images/brush-small.png') no-repeat center center;
+  background-size: contain;
+  margin: 20px 0 30px;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 3.5em;
+  color: #fff;
+}
+
+.section-h1-small {
+  background: url('/images/brush.png') no-repeat center center;
+  background-size: contain;
+  font-size: 2.5em;
+  line-height: 2.5em;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -9,6 +27,84 @@ body {
   padding: 0;
 }
 
+// NAVIGATION
+#navbar {
+  border-radius: 0;
+}
+
+.nav li {
+  margin: 0.2em 0;
+  background-color: #585759;
+  text-align: center;
+
+  &:hover {
+    background-color: #636363;
+  }
+}
+
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
+  border: 0;
+  border-radius: 0;
+  color: #FFF;
+
+  &::before, &::after {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    height: 2px;
+    margin-top: -1px;
+    background: #FFF;
+    content: '';
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    pointer-events: none;
+  }
+
+  &::before {
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  &::after {
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+.cross {
+  background-color: transparent;
+  color: #414042;
+
+  &::before, &::after {
+    width: 50%;
+  }
+
+  &::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+.extra-margin-top {
+  // This class is for when the nav gets its fixed-class
+  // preventing the content below to "fall up" when it happens.
+  margin-top: 70px;
+}
+
+// SECTION 1 - HERO
 #splash-page {
   background-color: #eee;
   background: url('/images/twirl.jpg') no-repeat #d3cfd0 center center;
@@ -26,80 +122,38 @@ body {
   }
 }
 
-#navbar {
-  border-radius: 0;
+// SECTION 2 - MY WORK
+#my-work {
+  h1 {
+    .section-h1;
+  }
+
+  .well {
+    padding: 0;
+
+    img {
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      display: none;
+    }
+  }
 }
 
-.navbar-toggle {
-  float: left;
-  margin-left: 15px;
-  border: 0;
-  border-radius: 0;
-  color: #FFF;
+// SECTION 3 - ABOUT ME
+#about-me {
+  h1 {
+    .section-h1;
+  }
 }
 
-.cross {
-  background-color: transparent;
-  color: #fff;
-}
-
-.navbar-toggle::before,
-.navbar-toggle::after {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 50%;
-  height: 2px;
-  margin-top: -1px;
-  background: #FFF;
-  content: '';
-  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
-  transition: transform 0.3s, opacity 0.3s;
-  pointer-events: none;
-}
-
-.navbar-toggle::before {
-  -webkit-transform: translateY(-20px);
-  -moz-transform: translateY(-20px);
-  transform: translateY(-20px);
-}
-
-.navbar-toggle::after {
-  -webkit-transform: translateY(20px);
-  -moz-transform: translateY(20px);
-  transform: translateY(20px);
-}
-
-.navbar-toggle.cross::before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.navbar-toggle.cross::after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.extra-margin-top {
-  // This class is for when the nav gets its fixed-class
-  // preventing the content below to "fall up" when it happens.
-  margin-top: 70px;
-}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  #splash-page {
-    min-height: 100%;
-    min-height: 100vh;
 
-    #splash-inner {
-     top: 50%;
-    }
-  }
-
+  // NAVIGATION
   .navbar {
     text-align: center;
 
@@ -110,6 +164,10 @@ body {
       li {
         display: inline;
         float: none;
+
+        &:hover {
+          background-color: transparent;
+        }
 
         a {
           display: inline;
@@ -124,6 +182,46 @@ body {
     }
     .navbar-brand {
       display: none;
+    }
+  }
+
+  .nav li {
+    background-color: transparent;
+  }
+
+  // SECTION 1
+  #splash-page {
+    min-height: 100%;
+    min-height: 100vh;
+
+    #splash-inner {
+     top: 50%;
+    }
+  }
+
+  // SECTION 2
+  #my-work {
+    h1 {
+      .section-h1-small;
+    }
+
+    .well {
+      h2{
+        display: block;
+        margin: 0;
+        padding: 1em 0 0.4em;
+        background-color: #414042;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        color: #fff;
+      }
+    }
+  }
+
+  // SECTION 3
+  #about-me {
+    h1 {
+      .section-h1-small;
     }
   }
 }
