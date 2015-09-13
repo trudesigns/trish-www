@@ -101,6 +101,10 @@ body {
   text-align: center;
   margin-top: -100px;
 }
+#splash-page #splash-inner img {
+  max-width: 500px;
+  width: 50%;
+}
 #my-work h1 {
   background: url('/images/brush-small.png') no-repeat center center;
   background-size: contain;
@@ -128,6 +132,13 @@ body {
   text-align: center;
   line-height: 3.5em;
   color: #fff;
+}
+#about-me .center {
+  margin: 6em 0;
+  text-align: center;
+}
+#about-me .center img {
+  height: 130px;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
