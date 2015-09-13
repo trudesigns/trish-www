@@ -7,11 +7,82 @@
 body {
   padding: 0;
 }
+#splash-page {
+  background-color: #eee;
+  background: url('/images/twirl.jpg') no-repeat #d3cfd0 center center;
+  min-height: 50%;
+  min-height: 50vh;
+  background-size: contain;
+}
+#splash-page #splash-inner {
+  position: absolute;
+  top: 25%;
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  margin-top: -100px;
+}
+#navbar {
+  border-radius: 0;
+}
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
+  border: 0;
+  border-radius: 0;
+  color: #FFF;
+}
+.cross {
+  background-color: transparent;
+  color: #fff;
+}
+.navbar-toggle::before,
+.navbar-toggle::after {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: #FFF;
+  content: '';
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+.navbar-toggle::before {
+  -webkit-transform: translateY(-20px);
+  -moz-transform: translateY(-20px);
+  transform: translateY(-20px);
+}
+.navbar-toggle::after {
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  transform: translateY(20px);
+}
+.navbar-toggle.cross::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.navbar-toggle.cross::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
 .extra-margin-top {
   margin-top: 70px;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  #splash-page {
+    min-height: 100%;
+    min-height: 100vh;
+  }
+  #splash-page #splash-inner {
+    top: 50%;
+  }
   .navbar {
     text-align: center;
   }
@@ -34,18 +105,4 @@ body {
   .navbar .navbar-brand {
     display: none;
   }
-}
-/* First page: Splash Page */
-#splash-page {
-  min-height: 100%;
-  min-height: 100vh;
-  background-color: #eee;
-}
-#splash-page #splash-inner {
-  position: absolute;
-  top: 50%;
-  height: 200px;
-  width: 100%;
-  text-align: center;
-  margin-top: -100px;
 }

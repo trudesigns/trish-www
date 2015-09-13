@@ -31,27 +31,24 @@
     <div id="beginIsScrolledDown"></div>
 
     <!-- Add your site or application content here -->
-    <nav id="navbar" class="navbar navbar-default" ng-class="{'navbar-fixed-top': nav.isScrolledDown}">
+    <nav id="navbar" class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': nav.isScrolledDown}">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" ng-click="nav.isCollapsed = !nav.isCollapsed">
-            <span class="fa fa-bars fa-lg"></span>
-          </button>
-          <a ng-href="#/" ng-click="nav.scrollToTop()" class="navbar-brand">MENUE</a>
+          <button type="button" class="navbar-toggle" ng-class="{'cross': !nav.isCollapsed}" ng-click="nav.isCollapsed = !nav.isCollapsed">MENU</button>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div collapse="nav.isCollapsed">
           <ul class="nav navbar-nav">
             <li ng-class="{active: $location.path()=='my-work'}">
-              <a du-smooth-scroll du-scrollspy ng-href="#my-work" ng-click="nav.isCollapsed = true">My Work</a>
+              <a du-smooth-scroll du-scrollspy ng-href="#my-work" ng-click="nav.isCollapsed = true">My WoRK</a>
             </li>
             <li ng-class="{active: $location.path()=='about-me'}">
-              <a du-smooth-scroll du-scrollspy ng-href="#about-me" ng-click="nav.isCollapsed = true">About Me</a>
+              <a du-smooth-scroll du-scrollspy ng-href="#about-me" ng-click="nav.isCollapsed = true">ABOUT me</a>
             </li>
             <li ng-class="{active: $location.path()=='work-with-me'}">
-              <a du-smooth-scroll du-scrollspy ng-href="#work-with-me" ng-click="nav.isCollapsed = true">Work With Me</a>
+              <a du-smooth-scroll du-scrollspy ng-href="#work-with-me" ng-click="nav.isCollapsed = true">work With Me</a>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
