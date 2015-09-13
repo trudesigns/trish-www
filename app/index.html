@@ -21,12 +21,19 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="splash-page"><!-- section 1 -->
+    <!--
+    /**
+     * Section 1
+     */ -->
+    <div id="splash-page">
       <img src="/images/splash.png" alt="hero">
     </div>
 
+    <!--
+    /**
+     * Navbar
+     */ -->
     <div id="beginIsScrolledDown"></div>
-
     <!-- Add your site or application content here -->
     <nav id="navbar" class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': ctrl.isScrolledDown}">
       <div class="container-fluid">
@@ -54,7 +61,11 @@
 
     <div class="container-fluid" id="extraMarginTop">
 
-      <section id="my-work"><!-- section 2 -->
+      <!--
+      /**
+       * Section 2
+       */ -->
+      <section id="my-work">
         <h1>My Work</h1>
         <div class="row">
           <div class="col-md-4 col-sm-6">
@@ -96,71 +107,88 @@
         </div>
       </section>
 
-      <section id="about-me"><!-- section 3 -->
+      <!--
+      /**
+       * Section 3
+       */ -->
+      <section id="about-me">
         <h1>About Me</h1>
         <div class="row">
           <div class="col-lg-3 col-md-6 center">
             <img src="/images/about-me.png" alt="about-me">
             <h3>about me</h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus modi eaque architecto officiis ea repellat perferendis voluptates. Ab voluptate ratione, ut cumque dolorum delectus blanditiis, aliquid laborum expedita atque a.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus modi eaque architecto officiis ea repellat perferendis voluptates. Ab voluptate ratione, ut cumque dolorum delectus blanditiis, aliquid laborum expedita atque a.
+              <p>I consume design theory and art like a kid in a digital candy shop. The sight of a new typeface or charming color palette inspires experimental fervor. I have a voracious appetite for new interactive technologies. I am a designer with many styles, I can be fun and playful with bright colors pallets, funky edges and textures or professional and conservative with a clean and minimalistic approach. </p>
+              <p>I find creativity in everything I touch, with the desire to impact the crowd with amazing feelings when they look at my work.</p>
+              <p>I also like going to the beach and watching TED whenever I catch some free time.</p>
           </div>
           <div class="col-lg-3 col-md-6 center">
             <img src="/images/process.png" alt="my process">
             <h3>my process</h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto hic explicabo temporibus porro, tempore nam omnis perspiciatis est officia tempora quaerat aliquam, sit consectetur velit corrupti dolorem, eos sed necessitatibus?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto hic explicabo temporibus porro, tempore nam omnis perspiciatis est officia tempora quaerat aliquam, sit consectetur velit corrupti dolorem, eos sed necessitatibus?
+              <p>I take whatever concept at hand and I research my audience, I start with color pallets, style elements and fonts, then jump into content structure better know as Information architecture, once I structure the hyarchy by card sorting what is most important to deliver the message, I then start sketching wireframes, once the concept is in play I put my design into a mockup and work on the interactions and over all visual design, I then create a live prototype to deliver the project. Once I work with Developers and the completed project goes live I gather the data and analytics from the users interaction and I then make any modifications to the design based on facts.</p>
+              <p>TADA you got yourself a beautiful master piece after a crap load of cold brew from Starbucks.</p>
           </div>
           <div class="col-lg-3 col-md-6 center">
             <img src="/images/experience.png" alt="my experience">
             <h3>my experience</h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum blanditiis, quas explicabo, optio at neque saepe. Reiciendis, nam, debitis. Fugit suscipit numquam, voluptatum similique, explicabo ipsa sed obcaecati odit ipsum.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum blanditiis, quas explicabo, optio at neque saepe. Reiciendis, nam, debitis. Fugit suscipit numquam, voluptatum similique, explicabo ipsa sed obcaecati odit ipsum.
+              <p>Worked for in the government and legislative department at the los angeles county RRCC as a all around designer. Redesigned thier website, eblasts, designed numberouse amount of print material for the Presidentical elections, and I also did mockups of the new voting system.</p>
+              <p>I worked for Implant Direct in the IT web department as the head ux/ui designer for their global international webteam. I redesigned thier marketing site to be responsive, redesigned their ecommerce site, also designed parallax landing pages and newsletters, as well as maintained our global international websites.</p>
+              <p>oh yeah and I own my own tshirt printing and design company.</p>
           </div>
           <div class="col-lg-3 col-md-6 center">
             <img src="/images/education.png" alt="my education">
             <h3>my education</h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime corporis odio sint, culpa provident eius ea molestiae quod, assumenda ipsa, incidunt minima recusandae repellat, quis. Animi voluptate odit aperiam quibusdam!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime corporis odio sint, culpa provident eius ea molestiae quod, assumenda ipsa, incidunt minima recusandae repellat, quis. Animi voluptate odit aperiam quibusdam!
+              <p>I have a dagree in Web Interactive Media Design from The Art Institute of California.</p>
+              <p>I am certified in UX design from Nielsen Norman Group.<br> .I also learn allot from the university of youtube and google when ever I need to research anything extra.</p>
+              <p>Lynda.com has also influenced my education.</p>
+              <p>Oh yeah and working with Tommy H. goes down for the record on learning clean code.</p>
+              <p>And my last shout out goes out to the university of hard knocks for certifying me as a crazy gangstar on the streets.</p>
           </div>
         </div>
       </section>
 
+      <!--
+      /**
+       * Contact
+       */ -->
       <section id="work-with-me">
         <h1>Contact</h1>
         <div class="row">
-          <div class="col-sm-6">
-            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p> <hr style="border-width:20px;"><hr style="border-width:20px;">
-            <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p></blockquote>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+          <div class="col-xs-12">
+            <form>
+              <div class="form-group form-group-lg">
+                <label for="form_name">Name</label>
+                <input type="email" class="form-control" id="form_name" placeholder="Name">
+              </div>
+              <div class="form-group form-group-lg">
+                <label for="form_email">Email</label>
+                <input type="email" class="form-control" id="form_email" placeholder="Email">
+              </div>
+              <div class="form-group form-group-lg">
+                <label for="form_message">Message</label>
+                <textarea class="form-control" rows="3" id="form_message"></textarea>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
           </div>
-          <div class="col-sm-6">
-            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p> <hr style="border-width:20px;"><hr style="border-width:20px;">
-            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p> <hr style="border-width:20px;"><hr style="border-width:20px;">
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            <blockquote class="blockquote-reverse">
-            <p>Lorem ipsum...</p>
-            </blockquote>
         </div>
 
       </section>
 
-    </div>
+    </div><!-- /.container-fluid -->
 
-    <hr style="border-width:20px;">
-    <hr style="border-width:20px;">
-    <hr style="border-width:20px;">
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', '@@gaKey');
-       ga('send', 'pageview');
+    <!--
+    /**
+     * Google Analytics key will be set upon grunt deploy,
+     * grunt replace is configured to find the pattern @@gaKey
+     * and replace it with the current configs gaKey.
+     */ -->
+    <script>
+     !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+     (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+     r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+     }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+     ga('create', '@@gaKey');
+     ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
