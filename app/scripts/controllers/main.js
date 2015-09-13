@@ -11,28 +11,34 @@ angular.module('trishApp')
   .controller('MainCtrl', function ($scope, $document, $window) {
 
     var ctrl = this;
-    var document = $document[0];
-    var anchorElement = document.getElementById('beginIsScrolledDown');
-    var navElement = document.getElementById('navbar');
+    var $doc = $document[0];
+    var anchorElement = $doc.getElementById('beginIsScrolledDown');
+    var navElement = $doc.getElementById('navbar');
+    // var $marginElement = angular.element(document.getElementById('extraMarginTop'));
 
     function _init () {
       angular.element($window).bind('scroll', _onScroll);
       _setIsScrolledDown();
     }
 
-    function _setIsScrolledDown () {
-      if (anchorElement.getBoundingClientRect().top < 0) {
-        ctrl.isScrolledDown = true;
-      } else {
-        ctrl.isScrolledDown = false;
-        ctrl.isCollapsed = true;
-      }
-    }
-
     function _onScroll () {
       _setIsScrolledDown();
-      toggleNav(true);
+      // TODO: Set margin-top equal to navbar height
+      //       if scrolling down, then remove it on collapse or scrolling up
+      _setAnchorHeight();
       $scope.$digest();
+    }
+
+    function _setAnchorHeight () {
+      angular.element(anchorElement).css('height', (ctrl.isScrolledDown ? navElement.offsetHeight + 20 : 0) + 'px');
+    }
+
+    function _setIsScrolledDown () {
+      if (anchorElement.getBoundingClientRect().top > 0) { // If scrolled above the splash-page
+        ctrl.isScrolledDown = false;
+      } else { // Else scrolled past splash-page
+        ctrl.isScrolledDown = true;
+      }
     }
 
     function toggleNav (collapse) {
@@ -40,14 +46,15 @@ angular.module('trishApp')
     }
 
     function scrollToTop () {
-      document.scrollTop(0, 500).then(function () {
+      $doc.scrollTop(0, 500).then(function () {
         // do something...
       });
     }
 
     angular.extend(ctrl, {
-      isCollapsed : true,
-      isScrolledDown : null,
+      isCollapsed: true,
+      isScrolledDown: null,
+      lastAnchorPosition: null,
       toggleNav: toggleNav,
       scrollToTop : scrollToTop
     });
