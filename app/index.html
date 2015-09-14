@@ -35,7 +35,7 @@
      *
      * This element is for handling scroll and nav correlations.
      */ -->
-    <div id="beginIsScrolledDown" ng-class="{'navbar-equal-height-fix': ctrl.isScrolledDown}"></div>
+    <div id="anchorBeginIsScrolledDown" ng-class="{'navbar-equal-height-fix': ctrl.isScrolledDown}"></div>
     <!--
     /**
      * Bootstrap navbar component
@@ -49,7 +49,8 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div collapse="ctrl.isCollapsed" id="navbarNav">
+        <!-- <div collapse="ctrl.isCollapsed" id="navbarNav"> -->
+        <div collapse="ctrl.isCollapsed">
           <ul class="nav navbar-nav">
             <li ng-class="{active: $location.path()=='my-work'}">
               <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="ctrl.toggleNav(true)">My WoRK</a>

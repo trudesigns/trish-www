@@ -8,12 +8,13 @@
  * Controller of the trishApp
  */
 angular.module('trishApp')
-  .controller('MainCtrl', function ($scope, $document, $window) {
+  .controller('MainCtrl', function ($scope, $document, $window, $timeout) {
 
     var ctrl = this;
-    var $doc = $document[0];
-    var anchorElement = $doc.getElementById('beginIsScrolledDown');
-    var navElement = $doc.getElementById('navbar');
+    var _currentAnchorOffset;
+    var _previousAnchorOffset;
+    var anchorElement = document.getElementById('anchorBeginIsScrolledDown');
+    var navElement = document.getElementById('navbar');
     // var $marginElement = angular.element(document.getElementById('extraMarginTop'));
 
     function _init () {
@@ -22,31 +23,40 @@ angular.module('trishApp')
     }
 
     function _onScroll () {
-      _setIsScrolledDown();
-      // TODO: Set margin-top equal to navbar height
-      //       if scrolling down, then remove it on collapse or scrolling up
-      _setAnchorHeight();
-      $scope.$digest();
+      $scope.$evalAsync(function () {
+        _setIsScrolledDown();
+      });
     }
 
-    function _setAnchorHeight () {
-      angular.element(anchorElement).css('height', (ctrl.isScrolledDown ? navElement.offsetHeight + 20 : 0) + 'px');
+    /**
+     * For when scrolling down past navbar while it's open in mobile view.
+     */
+    function _setAnchorMarginBottom (newValue) {
+      angular.element(anchorElement).css('margin-bottom', (newValue ? newValue : ctrl.isScrolledDown ? navElement.offsetHeight + 20 : 0) + 'px');
     }
 
     function _setIsScrolledDown () {
-      if (anchorElement.getBoundingClientRect().top > 0) { // If scrolled above the splash-page
+      _currentAnchorOffset = anchorElement.getBoundingClientRect().top;
+      if (_currentAnchorOffset > 0) { // If scrolled above the splash-page
         ctrl.isScrolledDown = false;
-      } else { // Else scrolled past splash-page
+      } else { // Else is scrolled past splash-page
         ctrl.isScrolledDown = true;
       }
+      if (ctrl.isScrolledDown && _currentAnchorOffset > _previousAnchorOffset) { // If scrolled down and scrolling downwards
+        _setAnchorMarginBottom();
+      } else {
+        _setAnchorMarginBottom(0);
+      }
+      _previousAnchorOffset = _currentAnchorOffset;
     }
 
     function toggleNav (collapse) {
+      $timeout(_setAnchorMarginBottom, 10);
       ctrl.isCollapsed = collapse || !ctrl.isCollapsed;
     }
 
     function scrollToTop () {
-      $doc.scrollTop(0, 500).then(function () {
+      $document.scrollTop(0, 500).then(function () {
         // do something...
       });
     }
@@ -54,7 +64,6 @@ angular.module('trishApp')
     angular.extend(ctrl, {
       isCollapsed: true,
       isScrolledDown: null,
-      lastAnchorPosition: null,
       toggleNav: toggleNav,
       scrollToTop : scrollToTop
     });
