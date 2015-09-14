@@ -176,3 +176,29 @@ body {
     line-height: 2.5em;
   }
 }
+#work-with-me {
+  background-color: gray;
+  color: white;
+  text-align: center;
+  padding: 50px 25px;
+}
+#work-with-me h1 {
+  margin: 50px auto;
+}
+#work-with-me label {
+  background-color: white;
+  color: #F70864;
+  font-size: 1.3em;
+  margin-bottom: -10px;
+  padding: 15px 5px 8px;
+  width: 180px;
+}
+#work-with-me input.form-control,
+#work-with-me textarea {
+  border: 3px solid #57C1B0;
+  border-radius: 0px;
+  color: white;
+  background-color: transparent;
+  text-align: center;
+  padding: 30px 20px 20px;
+}

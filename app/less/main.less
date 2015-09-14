@@ -4,7 +4,9 @@
 //   height: 70px;
 // }
 
-// Mix Classes
+//**
+//* Mix Classes
+//*/
 .section-h1 {
   background: url('/images/brush-small.png') no-repeat center center;
   background-size: contain;
@@ -33,7 +35,9 @@ body {
   padding: 0;
 }
 
-// NAVIGATION
+//**
+//* Navigation
+//*/
 #navbar {
   border-radius: 0;
 }
@@ -104,7 +108,9 @@ body {
   }
 }
 
-// SECTION 1 - HERO
+//**
+//* Section 1 - Hero
+//*/
 #splash-page {
   background-color: #fff;
 
@@ -113,7 +119,9 @@ body {
   }
 }
 
-// SECTION 2 - MY WORK
+//**
+//* SECTION 2 - MY WORK
+//*/
 #my-work {
   h1 {
     .section-h1;
@@ -133,7 +141,9 @@ body {
   }
 }
 
-// SECTION 3 - ABOUT ME
+//**
+//* SECTION 3 - ABOUT ME
+//*/
 #about-me {
   h1 {
     .section-h1;
@@ -153,7 +163,9 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
 
-  // NAVIGATION
+  //**
+  //* NAVIGATION
+  //*/
   .navbar {
     text-align: center;
 
@@ -189,10 +201,14 @@ body {
     background-color: transparent;
   }
 
-  // SECTION 1
+  //**
+  //* SECTION 1
+  //*/
   #splash-page {}
 
-  // SECTION 2
+  //**
+  //* SECTION 2
+  //*/
   #my-work {
     h1 {
       .section-h1-small;
@@ -211,10 +227,44 @@ body {
     }
   }
 
-  // SECTION 3
+  //**
+  //* SECTION 3
+  //*/
   #about-me {
     h1 {
       .section-h1-small;
     }
+  }
+}
+
+//**
+//* Contact
+//*/
+#work-with-me {
+  background-color: gray;
+  color: white;
+  text-align: center;
+  padding: 50px 25px;
+
+  h1 {
+    margin: 50px auto;
+  }
+
+  label {
+    background-color: white;
+    color: #F70864;
+    font-size: 1.3em;
+    margin-bottom: -10px;
+    padding: 15px 5px 8px;
+    width: 180px;
+  }
+
+  input.form-control, textarea {
+    border: 3px solid #57C1B0;
+    border-radius: 0px;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+    padding: 30px 20px 20px;
   }
 }
