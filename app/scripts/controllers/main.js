@@ -12,9 +12,13 @@
     .module('trishApp')
     .controller('MainCtrl', MainCtrl);
 
-  MainCtrl.$inject = ['$scope', '$document', '$window', '$timeout'];
+  /**
+   *
+   */
+  MainCtrl.$inject= ['$scope', '$document', '$window', '$timeout', '$modal', '$log'];
 
-  function MainCtrl ($scope, $document, $window, $timeout) {
+  function MainCtrl ($scope, $document, $window, $timeout, $modal, $log) {
+
     var vm = this;
 
     var _currentAnchorOffset;
@@ -26,6 +30,12 @@
     vm.isScrolledDown = null;
     vm.toggleNav = toggleNav;
     vm.scrollToTop = scrollToTop;
+
+    vm.animationsEnabled = true;
+    vm.items = ['item1', 'item2', 'item3'];
+    vm.open = open;
+    vm.selected = null;
+    vm.toggleAnimation = toggleAnimation;
 
     _init();
 
@@ -73,5 +83,29 @@
       });
     }
 
+    function open (size) {
+      var modalInstance = $modal.open({
+       animation: vm.animationsEnabled,
+       templateUrl: 'myModalContent.html',
+       controller: 'ModalInstanceCtrl',
+       size: size,
+       resolve: {
+         items: function () {
+           return vm.items;
+         }
+       }
+      });
+      modalInstance.result.then(function (selectedItem) {
+       vm.selected = selectedItem;
+      }, function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+    }
+
+    function toggleAnimation () {
+      vm.animationsEnabled = !vm.animationsEnabled;
+    }
+
   }
+
 })();
