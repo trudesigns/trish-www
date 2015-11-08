@@ -2,15 +2,15 @@
   'use strict';
 
   /**
-   * @ngdoc function
-   * @name trishApp.controller:ModalinstanceCtrl
-   * @description
-   * # ModalinstanceCtrl
-   * Controller of the trishApp
-   */
+  * @ngdoc function
+  * @name trishApp.controller:ModalinstanceCtrl
+  * @description
+  * # ModalinstanceCtrl
+  * Controller of the trishApp
+  */
   angular
-    .module('trishApp')
-    .controller('ModalInstanceCtrl', ModalInstanceCtrl);
+  .module('trishApp')
+  .controller('ModalInstanceCtrl', ModalInstanceCtrl);
 
   /**
   *
@@ -21,15 +21,15 @@
 
     $scope.items = items;
     $scope.selected = {
-     item: $scope.items[0]
+      item: $scope.items[0]
     };
 
     $scope.ok = function () {
-     $modalInstance.close($scope.selected.item);
+      $modalInstance.close($scope.selected.item);
     };
 
     $scope.cancel = function () {
-     $modalInstance.dismiss('cancel');
+      $modalInstance.dismiss('cancel');
     };
 
   }

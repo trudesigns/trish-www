@@ -1,20 +1,20 @@
 (function () {
-   'use strict';
+  'use strict';
 
   /**
-   * @ngdoc function
-   * @name trishApp.controller:MainCtrl
-   * @description
-   * # MainCtrl
-   * Controller of the trishApp
-   */
+  * @ngdoc function
+  * @name trishApp.controller:MainCtrl
+  * @description
+  * # MainCtrl
+  * Controller of the trishApp
+  */
   angular
-    .module('trishApp')
-    .controller('MainCtrl', MainCtrl);
+  .module('trishApp')
+  .controller('MainCtrl', MainCtrl);
 
   /**
-   *
-   */
+  *
+  */
   MainCtrl.$inject= ['$scope', '$document', '$window', '$timeout', '$modal', '$log'];
 
   function MainCtrl ($scope, $document, $window, $timeout, $modal, $log) {
@@ -33,7 +33,7 @@
 
     vm.animationsEnabled = true;
     vm.items = ['item1', 'item2', 'item3'];
-    vm.open = open;
+    vm.openModal = openModal;
     vm.selected = null;
     vm.toggleAnimation = toggleAnimation;
 
@@ -51,10 +51,12 @@
     }
 
     /**
-     * For when scrolling down past navbar while it's open in mobile view.
-     */
+    * For when scrolling down past navbar while it's open in mobile view.
+    */
     function _setAnchorMarginBottom (newValue) {
-      angular.element(anchorElement).css('margin-bottom', (newValue ? newValue : vm.isScrolledDown ? navElement.offsetHeight + 20 : 0) + 'px');
+      var marginValue = newValue ? newValue : vm.isScrolledDown ? navElement.offsetHeight + 20 : 0;
+      console.log('Margin value is: ', marginValue);
+      // angular.element(anchorElement).css('margin-bottom', (marginValue) + 'px');
     }
 
     function _setIsScrolledDown () {
@@ -83,20 +85,20 @@
       });
     }
 
-    function open (size) {
+    function openModal (size) {
       var modalInstance = $modal.open({
-       animation: vm.animationsEnabled,
-       templateUrl: 'myModalContent.html',
-       controller: 'ModalInstanceCtrl',
-       size: size,
-       resolve: {
-         items: function () {
-           return vm.items;
-         }
-       }
+        animation: vm.animationsEnabled,
+        templateUrl: 'myModalContent.html',
+        controller: 'ModalInstanceCtrl',
+        size: size,
+        resolve: {
+          items: function () {
+            return vm.items;
+          }
+        }
       });
       modalInstance.result.then(function (selectedItem) {
-       vm.selected = selectedItem;
+        vm.selected = selectedItem;
       }, function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
