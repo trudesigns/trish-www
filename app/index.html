@@ -90,10 +90,10 @@
         <div collapse="ctrl.isCollapsed">
           <ul class="nav navbar-nav">
             <li ng-class="{active: $location.path()=='my-work'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="ctrl.toggleNav(true)">My WoRK</a>
+              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="ctrl.toggleNav(true)">my work</a>
             </li>
             <li ng-class="{active: $location.path()=='about-me'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#about-me" ng-click="ctrl.toggleNav(true)">ABOUT me</a>
+              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#about-me" ng-click="ctrl.toggleNav(true)">about me</a>
             </li>
             <li ng-class="{active: $location.path()=='work-with-me'}">
               <a du-smooth-scroll du-scrollspy offset="70" ng-href="#work-with-me" ng-click="ctrl.toggleNav(true)">work with me</a>
@@ -108,42 +108,30 @@
      * Section 2
      */ -->
     <section id="my-work" class="container-fluid">
-      <h1>My Work</h1>
+      <h1>my work</h1>
       <div class="row">
-        <div class="col-md-4 col-sm-6">
-          <div class="well" ng-click="ctrl.open()">
+        <div class="col-md-3 col-sm-6 center">
+          <div class="well well-effect" ng-click="ctrl.open()">
             <img src="/images/project1.png" alt="">
             <h2>websites</h2>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="well">
+        <div class="col-md-3 col-sm-6 center">
+          <div class="well well-effect" ng-click="ctrl.open()">
             <img src="/images/project1.png" alt="">
             <h2>design documents</h2>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="well">
-            <img src="/images/project1.png" alt="">
-            <h2>videos</h2>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="well">
+        <div class="col-md-3 col-sm-6 center">
+          <div class="well well-effect" ng-click="ctrl.open()">
             <img src="/images/project1.png" alt="">
             <h2>graphics</h2>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="well">
+        <div class="col-md-3 col-sm-6 center">
+          <div class="well well-effect" ng-click="ctrl.open()">
             <img src="/images/project1.png" alt="">
             <h2>research</h2>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="well">
-            <img src="/images/project1.png" alt="">
-            <h2>other</h2>
           </div>
         </div>
       </div>
@@ -154,36 +142,55 @@
      * Section 3
      */ -->
     <section id="about-me" class="container-fluid">
-      <h1>About Me</h1>
+      <h1>about me</h1>
       <div class="row">
-        <div class="col-lg-3 col-md-6 center">
-          <img src="/images/about-me.png" alt="about-me">
-          <h3>about me</h3>
+        <div class="col-md-3 col-sm-6 col-xs-12 center">
+          <div class="about-top">
+            <img src="/images/about-me.png" alt="about-me">
+            <h3>about me</h3>
+          </div>
+          <div class="about-content">
+            <div class="about-pre-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut unde impedit rem qui illo in soluta, natus provident ab doloremque nemo? Assumenda perspiciatis ullam distinctio consequuntur vero voluptate amet obcaecati.</p>
+            </div>
             <p>I consume design theory and art like a kid in a digital candy shop. The sight of a new typeface or charming color palette inspires experimental fervor. I have a voracious appetite for new interactive technologies. I am a designer with many styles, I can be fun and playful with bright colors pallets, funky edges and textures or professional and conservative with a clean and minimalistic approach. </p>
             <p>I find creativity in everything I touch, with the desire to impact the crowd with amazing feelings when they look at my work.</p>
             <p>I also like going to the beach and watching TED whenever I catch some free time.</p>
+          </div>
         </div>
-        <div class="col-lg-3 col-md-6 center">
-          <img src="/images/process.png" alt="my process">
-          <h3>my process</h3>
+        <div class="col-md-3 col-sm-6 col-xs-12 center">
+          <div class="about-top">
+            <img src="/images/process.png" alt="my process">
+            <h3>my process</h3>
+          </div>
+          <div class="about-content">
             <p>I take whatever concept at hand and I research my audience, I start with color pallets, style elements and fonts, then jump into content structure better know as Information architecture, once I structure the hyarchy by card sorting what is most important to deliver the message, I then start sketching wireframes, once the concept is in play I put my design into a mockup and work on the interactions and over all visual design, I then create a live prototype to deliver the project. Once I work with Developers and the completed project goes live I gather the data and analytics from the users interaction and I then make any modifications to the design based on facts.</p>
             <p>TADA you got yourself a beautiful master piece after a crap load of cold brew from Starbucks.</p>
+          </div>
         </div>
-        <div class="col-lg-3 col-md-6 center">
-          <img src="/images/experience.png" alt="my experience">
-          <h3>my experience</h3>
+        <div class="col-md-3 col-sm-6 col-xs-12 center">
+          <div class="about-top">
+            <img src="/images/experience.png" alt="my experience">
+            <h3>my experience</h3>
+          </div>
+          <div class="about-content">
             <p>Worked for in the government and legislative department at the los angeles county RRCC as a all around designer. Redesigned thier website, eblasts, designed numberouse amount of print material for the Presidentical elections, and I also did mockups of the new voting system.</p>
             <p>I worked for Implant Direct in the IT web department as the head ux/ui designer for their global international webteam. I redesigned thier marketing site to be responsive, redesigned their ecommerce site, also designed parallax landing pages and newsletters, as well as maintained our global international websites.</p>
             <p>oh yeah and I own my own tshirt printing and design company.</p>
+          </div>
         </div>
-        <div class="col-lg-3 col-md-6 center">
-          <img src="/images/education.png" alt="my education">
-          <h3>my education</h3>
+        <div class="col-md-3 col-sm-6 col-xs-12 center">
+          <div class="about-top">
+            <img src="/images/education.png" alt="my education">
+            <h3>my education</h3>
+          </div>
+          <div class="about-content">
             <p>I have a dagree in Web Interactive Media Design from The Art Institute of California.</p>
-            <p>I am certified in UX design from Nielsen Norman Group.<br> .I also learn allot from the university of youtube and google when ever I need to research anything extra.</p>
+            <p>I am certified in UX design from Nielsen Norman Group. I also learn allot from the university of youtube and google when ever I need to research anything extra.</p>
             <p>Lynda.com has also influenced my education.</p>
             <p>Oh yeah and working with Tommy H. goes down for the record on learning clean code.</p>
             <p>And my last shout out goes out to the university of hard knocks for certifying me as a crazy gangstar on the streets.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -193,20 +200,35 @@
      * Contact
      */ -->
     <section id="work-with-me" class="container-fluid">
-      <h1>Contact</h1>
+      <h1>contact</h1>
       <form class="container">
-        <div class="form-group form-group-lg">
-          <label for="form_name">Name</label>
-          <input type="email" class="form-control" id="form_name" placeholder="Name">
-        </div>
-        <div class="form-group form-group-lg">
-          <label for="form_email">Email</label>
-          <input type="email" class="form-control" id="form_email" placeholder="Email">
-        </div>
-        <div class="form-group form-group-lg">
-          <label for="form_message">Message</label>
-          <textarea class="form-control" rows="3" id="form_message"></textarea>
-        </div>
+        <span class="input input--kozakura">
+          <input class="input__field input__field--kozakura" type="text" id="input-7">
+          <label class="input__label input__label--kozakura" for="input-7">
+            <span class="input__label-content input__label-content--kozakura" data-content="Name">Name</span>
+          </label>
+          <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
+          </svg>
+        </span>
+        <span class="input input--kozakura">
+          <input class="input__field input__field--kozakura" type="text" id="input-8">
+          <label class="input__label input__label--kozakura" for="input-8">
+            <span class="input__label-content input__label-content--kozakura" data-content="Email">Email</span>
+          </label>
+          <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
+          </svg>
+        </span>
+        <span class="input input--kozakura">
+          <input class="input__field input__field--kozakura" type="text" id="input-9">
+          <label class="input__label input__label--kozakura" for="input-9">
+            <span class="input__label-content input__label-content--kozakura" data-content="Website">Website</span>
+          </label>
+          <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
+          </svg>
+        </span>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
 
