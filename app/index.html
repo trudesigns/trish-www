@@ -13,6 +13,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/mantra.css -->
     <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/animate.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -108,7 +109,7 @@
      * Section 2
      */ -->
     <section id="my-work" class="container-fluid">
-      <h1>my work</h1>
+      <h1 class="wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">my work</h1>
       <div class="row">
         <div class="col-md-3 col-sm-6 center">
           <div class="well well-effect" ng-click="ctrl.open()">
@@ -142,7 +143,7 @@
      * Section 3
      */ -->
     <section id="about-me" class="container-fluid">
-      <h1>about me</h1>
+      <h1 class="wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">about me</h1>
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12 center">
           <div class="about-top">
@@ -200,7 +201,7 @@
      * Contact
      */ -->
     <section id="work-with-me" class="container-fluid">
-      <h1>contact</h1>
+      <h1 class="wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">contact</h1>
       <form class="container">
         <span class="input input--kozakura">
           <input class="input__field input__field--kozakura" type="text" id="input-7">
@@ -254,6 +255,7 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="bower_components/wow/dist/wow.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

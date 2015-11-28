@@ -1,3 +1,5 @@
+/*global WOW*/
+
 (function () {
   'use strict';
 
@@ -42,6 +44,7 @@
     function _init () {
       angular.element($window).bind('scroll', _onScroll);
       _setIsScrolledDown();
+      new WOW().init();
     }
 
     function _onScroll () {
