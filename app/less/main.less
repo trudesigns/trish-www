@@ -136,7 +136,12 @@ body {
 //* Section 1 - Hero
 //*/
 #splash-page {
-  background-color: #fff;
+  height: 100vh;
+  background: url(/images/splash.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
   img {
     width: 100%;
@@ -182,7 +187,7 @@ body {
 
     &:hover h2 {
       height: 100%;
-      padding: 30% 0 0;
+      padding: 44% 0 0;
       background-color: rgba(65,64,66,0.92);
     }
 
@@ -251,22 +256,32 @@ body {
 
     .about-content {
       bottom: 0;
-      padding: 0 15px 15px 15px;
+      padding: 0 10px;
       position: absolute;
       width: 100%;
 
       .about-content-image {
         border: 5px solid #fff;
         border-radius: 4px;
+        margin: 0 0 10px;
         width: 100%;
       }
 
-      p {
-        color: black;
+      .text {
+        background-color: #414042;
+        border-radius: 4px;
+        color: #F28FC5;
         display: none;
         letter-spacing: 0.3px;
-        margin: 0 auto 10px;
+        padding: 10px 8px;
         text-align: left;
+        -webkit-box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
+
+        p {
+          margin: 0 auto 10px;
+        }
       }
     }
 
@@ -283,12 +298,12 @@ body {
     }
 
     &:hover .about-content-image {
-      margin: 20px 0;
+      border: 1px solid #414042;
+      margin: 10px 0;
     }
 
-    &:hover p {
+    &:hover .text {
       display: block;
-      color: #F28FC5;
     }
   }
 }

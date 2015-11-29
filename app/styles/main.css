@@ -103,7 +103,12 @@ body {
   transform: rotate(-45deg);
 }
 #splash-page {
-  background-color: #fff;
+  height: 100vh;
+  background: url(/images/splash.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 #splash-page img {
   width: 100%;
@@ -140,7 +145,7 @@ body {
 }
 #my-work .well-effect:hover h2 {
   height: 100%;
-  padding: 30% 0 0;
+  padding: 44% 0 0;
   background-color: rgba(65, 64, 66, 0.92);
 }
 #my-work .well-effect:hover img {
@@ -195,21 +200,30 @@ body {
 }
 #about-me .about-wrapper .about-content {
   bottom: 0;
-  padding: 0 15px 15px 15px;
+  padding: 0 10px;
   position: absolute;
   width: 100%;
 }
 #about-me .about-wrapper .about-content .about-content-image {
   border: 5px solid #fff;
   border-radius: 4px;
+  margin: 0 0 10px;
   width: 100%;
 }
-#about-me .about-wrapper .about-content p {
-  color: black;
+#about-me .about-wrapper .about-content .text {
+  background-color: #414042;
+  border-radius: 4px;
+  color: #F28FC5;
   display: none;
   letter-spacing: 0.3px;
-  margin: 0 auto 10px;
+  padding: 10px 8px;
   text-align: left;
+  -webkit-box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
+}
+#about-me .about-wrapper .about-content .text p {
+  margin: 0 auto 10px;
 }
 #about-me .about-wrapper:hover {
   background-color: rgba(65, 64, 66, 0.92);
@@ -221,11 +235,11 @@ body {
   bottom: auto;
 }
 #about-me .about-wrapper:hover .about-content-image {
-  margin: 20px 0;
+  border: 1px solid #414042;
+  margin: 10px 0;
 }
-#about-me .about-wrapper:hover p {
+#about-me .about-wrapper:hover .text {
   display: block;
-  color: #F28FC5;
 }
 #work-with-me {
   border-top: 1px solid #DADADA;
