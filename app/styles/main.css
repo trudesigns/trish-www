@@ -1,9 +1,11 @@
 section {
   margin: 0 0 100px;
 }
+section .text-center {
+  padding: 0 0 50px;
+  margin: 100px 0;
+}
 section h1 {
-  margin: 0;
-  padding: 120px 0;
   font-size: 4em;
   text-align: center;
   letter-spacing: 2px;
@@ -150,70 +152,80 @@ body {
 #about-me {
   border-top: 1px solid #DADADA;
 }
-#about-me .about-top,
-#about-me .about-content {
-  max-width: 570px;
-  margin: 0 auto;
-  padding: 0;
-}
-#about-me .about-content {
-  height: 480px;
-  overflow: hidden;
-  padding: 20px 0 0;
-  border-top: 1px solid #C5C5C5;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-#about-me .about-content .about-pre-content {
-  overflow: hidden;
-  height: 100%;
-  padding: 100px 0 0;
-  transition: all 0.05s ease-in-out;
-  -webkit-transition: all 0.05s ease-in-out;
-  -moz-transition: all 0.05s ease-in-out;
-  -o-transition: all 0.05s ease-in-out;
-}
-#about-me .about-content p {
-  color: black;
-  margin: 10px auto;
-  padding: 0 20px;
-  text-align: left;
-  letter-spacing: 0.3px;
-}
 #about-me .center {
   margin: 0 0 30px;
   text-align: center;
 }
-#about-me .center:hover .about-content {
-  background-color: rgba(65, 64, 66, 0.92);
-}
-#about-me .center:hover p {
-  color: #F28FC5;
-}
-#about-me .center:hover .about-pre-content {
-  height: 0;
-  padding: 0;
-}
-#about-me .center .about-top {
-  border-left: 1px solid #E7E7E7;
-  border-right: 1px solid #E7E7E7;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-top: 1px solid #E7E7E7;
+#about-me .about-top {
   padding: 40px 0 0;
 }
-#about-me .center .about-top img {
+#about-me .about-top img {
   height: 130px;
 }
-#about-me .center .about-top h3 {
+#about-me .about-top h3 {
   border-bottom: 5px solid #5CC1B1;
   color: #F28FC5;
-  font-size: 1.15em;
+  font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 2px;
   margin: 20px 0 0;
   padding: 0 0 10px;
   text-transform: uppercase;
+}
+#about-me .about-wrapper {
+  background-color: #f2f2f2;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 650px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+#about-me .about-wrapper .about-pre-content {
+  padding: 100px 15px 200px;
+  transition: all 0.05s ease-in-out;
+  -webkit-transition: all 0.05s ease-in-out;
+  -moz-transition: all 0.05s ease-in-out;
+  -o-transition: all 0.05s ease-in-out;
+}
+#about-me .about-wrapper .about-pre-content p {
+  color: #606060;
+  font-size: 1.4em;
+  text-align: center;
+}
+#about-me .about-wrapper .about-content {
+  bottom: 0;
+  padding: 0 15px 15px 15px;
+  position: absolute;
+  width: 100%;
+}
+#about-me .about-wrapper .about-content .about-content-image {
+  border: 5px solid #fff;
+  border-radius: 4px;
+  width: 100%;
+}
+#about-me .about-wrapper .about-content p {
+  color: black;
+  display: none;
+  letter-spacing: 0.3px;
+  margin: 0 auto 10px;
+  text-align: left;
+}
+#about-me .about-wrapper:hover {
+  background-color: rgba(65, 64, 66, 0.92);
+}
+#about-me .about-wrapper:hover .about-pre-content {
+  display: none;
+}
+#about-me .about-wrapper:hover .about-content {
+  bottom: auto;
+}
+#about-me .about-wrapper:hover .about-content-image {
+  margin: 20px 0;
+}
+#about-me .about-wrapper:hover p {
+  display: block;
+  color: #F28FC5;
 }
 #work-with-me {
   border-top: 1px solid #DADADA;
@@ -221,22 +233,6 @@ body {
   padding: 0 25px;
   text-align: center;
   /* Kozakura */
-  /* label {
-    background-color: white;
-    color: #F70864;
-    font-size: 1.3em;
-    margin-bottom: -10px;
-    padding: 15px 5px 8px;
-    width: 180px;
-  } */
-  /* input.form-control, textarea {
-    border: 3px solid #57C1B0;
-    border-radius: 0px;
-    color: white;
-    background-color: transparent;
-    text-align: center;
-    padding: 30px 20px 20px;
-  } */
 }
 #work-with-me .input {
   display: inline-block;

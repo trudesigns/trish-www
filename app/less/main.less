@@ -9,16 +9,19 @@
 //*/
 section {
   margin: 0 0 100px;
-}
 
-section h1 {
-  margin: 0;
-  padding: 120px 0;
-  font-size: 4em;
-  text-align: center;
-  letter-spacing: 2px;
-  color: #F28FC5;
-  text-shadow: 0px 1px 1px #8F8F8F;
+  .text-center {
+    padding: 0 0 50px;
+    margin: 100px 0;
+  }
+
+  h1 {
+    font-size: 4em;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #F28FC5;
+    text-shadow: 0px 1px 1px #8F8F8F;
+  }
 }
 
 .browsehappy {
@@ -196,83 +199,96 @@ body {
 //* SECTION 3 - ABOUT ME
 //*/
 #about-me {
-    border-top: 1px solid #DADADA;
-
-  h1 {}
-
-  .about-top, .about-content {
-    max-width: 570px;
-    margin: 0 auto;
-    padding: 0;
-  }
-
-  .about-content {
-    height: 480px;
-    overflow: hidden;
-    padding: 20px 0 0;
-    border-top: 1px solid #C5C5C5;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-
-
-    .about-pre-content {
-      overflow: hidden;
-      height: 100%;
-      padding: 100px 0 0;
-      transition:all 0.05s ease-in-out;
-      -webkit-transition:all 0.05s ease-in-out;
-      -moz-transition:all 0.05s ease-in-out;
-      -o-transition:all 0.05s ease-in-out;
-    }
-
-    p {
-      color: black;
-      margin: 10px auto;
-      padding: 0 20px;
-      text-align: left;
-      letter-spacing: 0.3px;
-    }
-  }
+  border-top: 1px solid #DADADA;
 
   .center {
     margin: 0 0 30px;
     text-align: center;
+  }
 
-    &:hover .about-content {
+  .about-top {
+    padding: 40px 0 0;
+
+    img {
+      height: 130px;
+    }
+
+    h3 {
+      border-bottom: 5px solid #5CC1B1;
+      color: #F28FC5;
+      font-size: 1.5em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin: 20px 0 0;
+      padding: 0 0 10px;
+      text-transform: uppercase;
+    }
+  }
+
+  .about-wrapper {
+    background-color: #f2f2f2;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    height: 650px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+
+    .about-pre-content {
+      padding: 100px 15px 200px;
+      transition:all 0.05s ease-in-out;
+      -webkit-transition:all 0.05s ease-in-out;
+      -moz-transition:all 0.05s ease-in-out;
+      -o-transition:all 0.05s ease-in-out;
+
+      p {
+        color: #606060;
+        font-size: 1.4em;
+        text-align: center;
+      }
+    }
+
+
+    .about-content {
+      bottom: 0;
+      padding: 0 15px 15px 15px;
+      position: absolute;
+      width: 100%;
+
+      .about-content-image {
+        border: 5px solid #fff;
+        border-radius: 4px;
+        width: 100%;
+      }
+
+      p {
+        color: black;
+        display: none;
+        letter-spacing: 0.3px;
+        margin: 0 auto 10px;
+        text-align: left;
+      }
+    }
+
+    &:hover {
       background-color: rgba(65,64,66,0.92);
     }
 
-    &:hover p {
-      color: #F28FC5;
-    }
-
     &:hover .about-pre-content {
-      height: 0;
-      padding: 0;
+      display: none;
     }
 
-    .about-top {
-      border-left: 1px solid #E7E7E7;
-      border-right: 1px solid #E7E7E7;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      border-top: 1px solid #E7E7E7;
-      padding: 40px 0 0;
+    &:hover .about-content {
+      bottom: auto;
+    }
 
-      img {
-        height: 130px;
-      }
+    &:hover .about-content-image {
+      margin: 20px 0;
+    }
 
-      h3 {
-        border-bottom: 5px solid #5CC1B1;
-        color: #F28FC5;
-        font-size: 1.15em;
-        font-weight: bold;
-        letter-spacing: 2px;
-        margin: 20px 0 0;
-        padding: 0 0 10px;
-        text-transform: uppercase;
-      }
+    &:hover p {
+      display: block;
+      color: #F28FC5;
     }
   }
 }
@@ -448,24 +464,6 @@ body {
   -webkit-transform: translate3d(-66.6%, 0, 0);
   transform: translate3d(-66.6%, 0, 0);
 }
-
-  /* label {
-    background-color: white;
-    color: #F70864;
-    font-size: 1.3em;
-    margin-bottom: -10px;
-    padding: 15px 5px 8px;
-    width: 180px;
-  } */
-
-  /* input.form-control, textarea {
-    border: 3px solid #57C1B0;
-    border-radius: 0px;
-    color: white;
-    background-color: transparent;
-    text-align: center;
-    padding: 30px 20px 20px;
-  } */
 }
 
 /* Responsive: Portrait tablets and up */
