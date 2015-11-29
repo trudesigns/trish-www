@@ -1,4 +1,4 @@
-/*global WOW*/
+/* global WOW */
 
 (function () {
   'use strict';
@@ -58,8 +58,7 @@
     */
     function _setAnchorMarginBottom (newValue) {
       var marginValue = newValue ? newValue : vm.isScrolledDown ? navElement.offsetHeight + 20 : 0;
-      console.log('Margin value is: ', marginValue);
-      // angular.element(anchorElement).css('margin-bottom', (marginValue) + 'px');
+      angular.element(anchorElement).css('margin-bottom', (marginValue) + 'px');
     }
 
     function _setIsScrolledDown () {

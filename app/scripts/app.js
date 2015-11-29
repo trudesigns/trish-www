@@ -11,6 +11,8 @@
 angular
   .module('trishApp', [
     'config',
+    'ngAnimate',
+    'ngTouch',
     'duScroll',
     'ui.bootstrap'
   ]);

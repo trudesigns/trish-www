@@ -39,33 +39,19 @@
         <h3 class="modal-title">Im a modal!</h3>
       </div>
       <div class="modal-body">
-        <ul>
-          <li ng-repeat="item in items">
-            <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-          </li>
-        </ul>
-        Selected: <b>{{ selected.item }}</b>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        <div style="height: 305px">
+          <uib-carousel>
+            <uib-slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="{{slide.image}}" style="margin:auto;">
+              <div class="carousel-caption">
+                <h4>Slide {{$index}}</h4>
+                <p>{{slide.text}}</p>
+              </div>
+            </uib-slide>
+          </uib-carousel>
+        </div>
       </div>
     </script>
-
-    <!--
-    /**
-     * Test buttons
-     */ -->
-    <div class="container-fluid ng-cloak">
-      <div class="alert alert-danger">
-        <button type="button" class="btn btn-default" ng-click="ctrl.openModal()">Open me!</button>
-        <button type="button" class="btn btn-default" ng-click="ctrl.openModal('lg')">Large modal</button>
-        <button type="button" class="btn btn-default" ng-click="ctrl.openModal('sm')">Small modal</button>
-        <button type="button" class="btn btn-default" ng-click="ctrl.toggleAnimation()">Toggle Animation ({{ ctrl.animationsEnabled }})</button>
-        <div ng-show="ctrl.selected">Selection from a modal: {{ ctrl.selected }}</div>
-      </div>
-    </div>
-
 
     <!--
     /**
@@ -112,25 +98,25 @@
       <h1 class="wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">my work</h1>
       <div class="row">
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.open()">
+          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
             <img src="/images/project1.png" alt="">
             <h2>websites</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.open()">
+          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
             <img src="/images/project1.png" alt="">
             <h2>design documents</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.open()">
+          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
             <img src="/images/project1.png" alt="">
             <h2>graphics</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.open()">
+          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
             <img src="/images/project1.png" alt="">
             <h2>research</h2>
           </div>
@@ -252,10 +238,13 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
     <script src="bower_components/wow/dist/wow.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -15,22 +15,24 @@
   /**
   *
   */
-  ModalInstanceCtrl.$inject = ['$scope', '$modalInstance', 'items'];
+  ModalInstanceCtrl.$inject = ['$scope'];
 
-  function ModalInstanceCtrl($scope, $modalInstance, items) {
+  function ModalInstanceCtrl($scope) {
 
-    $scope.items = items;
-    $scope.selected = {
-      item: $scope.items[0]
+    var slides = $scope.slides = [];
+
+    $scope.addSlide = function() {
+      var newWidth = 600 + slides.length + 1;
+      slides.push({
+        image: '//placekitten.com/' + newWidth + '/300',
+        text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
+          ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
+      });
     };
 
-    $scope.ok = function () {
-      $modalInstance.close($scope.selected.item);
-    };
-
-    $scope.cancel = function () {
-      $modalInstance.dismiss('cancel');
-    };
+    for (var i=0; i<4; i++) {
+      $scope.addSlide();
+    }
 
   }
 
