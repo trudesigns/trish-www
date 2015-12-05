@@ -1,3 +1,6 @@
+.navbar-equal-height-fix {
+  height: 20px;
+}
 section {
   margin: 0;
   padding: 0 0 100px;

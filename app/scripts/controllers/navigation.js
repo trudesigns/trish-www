@@ -10,6 +10,7 @@
     var vm = this;
 
     var _currentAnchorOffset;
+    var _isChecking = null;
     var _previousAnchorOffset;
     var anchorElement = document.getElementById('anchorBeginIsScrolledDown');
     var navElement = document.getElementById('navbar');
@@ -28,16 +29,21 @@
     }
 
     function _onScroll () {
-      $scope.$evalAsync(function () {
-        _setIsScrolledDown();
-      });
+      if (!_isChecking) {
+        _isChecking = true;
+        console.log(vm.isScrolledDown);
+        $scope.$evalAsync(function () {
+          _setIsScrolledDown();
+          _isChecking = false;
+        });
+      }
     }
 
     /**
     * For when scrolling down past navbar while it's open in mobile view.
     */
     function _setAnchorMarginBottom (newValue) {
-      var marginValue = newValue ? newValue : vm.isScrolledDown ? navElement.offsetHeight + 20 : 0;
+      var marginValue = newValue ? newValue : vm.isScrolledDown ? navElement.offsetHeight : 0;
       angular.element(anchorElement).css('margin-bottom', (marginValue) + 'px');
     }
 
