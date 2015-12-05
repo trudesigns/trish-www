@@ -2,16 +2,19 @@
   "dev": {
     "basePath": "/",
     "siteUrl": "http://localhost:9000/",
+    "apiUrl": "http://127.0.0.1:8080/",
     "gaKey": "UA-XXXXXXXX-X"
   },
   "stage": {
     "basePath": "/",
     "siteUrl": "http://www.trish-stage.thehost.se/",
+    "apiUrl": "http://www.trish-api-stage.thehost.se/",
     "gaKey": "UA-XXXXXXXX-X"
   },
   "production": {
     "basePath": "/",
     "siteUrl": "http://www.trish.thehost.se/",
+    "apiUrl": "http://www.trish-api.thehost.se/",
     "gaKey": "UA-XXXXXXXX-X"
   }
 }

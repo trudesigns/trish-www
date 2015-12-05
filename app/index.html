@@ -13,7 +13,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/mantra.css -->
     <link rel="stylesheet" href="styles/bootstrap.css">
-    <link rel="stylesheet" href="/styles/animate.min.css">
+    <link rel="stylesheet" href="styles/animate.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
@@ -37,7 +37,7 @@
      */ -->
     <script type="text/ng-template" id="myModalContent.html">
       <div class="modal-header">
-        <h3 class="modal-title">Im a modal!</h3>
+        <h3 class="modal-title">{{ title }}</h3>
       </div>
       <div class="modal-body">
         <div style="height: 305px">
@@ -58,38 +58,45 @@
     /**
      * Navbar
      *
-     * This element is for handling scroll and nav correlations.
      */ -->
-    <div id="anchorBeginIsScrolledDown" ng-class="{'navbar-equal-height-fix': ctrl.isScrolledDown}"></div>
-    <!--
-    /**
-     * Bootstrap navbar component
-     */ -->
-    <!-- Add your site or application content here -->
-    <nav id="navbar" class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': ctrl.isScrolledDown}">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" ng-class="{'cross': !ctrl.isCollapsed}" ng-click="ctrl.toggleNav()">MENU</button>
-        </div>
+    <div ng-controller="NavigationCtrl as nav">
+      <!--
+       /**
+       *
+       * This element is for handling scroll and nav correlations.
+       */ -->
+      <div id="anchorBeginIsScrolledDown" ng-class="{'navbar-equal-height-fix': nav.isScrolledDown}"></div>
+      <!--
+      /**
+       * Bootstrap navbar component
+       */ -->
+      <!-- Add your site or application content here -->
+      <nav id="navbar" class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': nav.isScrolledDown}">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-class="{'cross': !nav.isCollapsed}" ng-click="nav.toggleNav()">MENU</button>
+          </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- <div collapse="ctrl.isCollapsed" id="navbarNav"> -->
-        <div collapse="ctrl.isCollapsed">
-          <ul class="nav navbar-nav">
-            <li ng-class="{active: $location.path()=='my-work'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="ctrl.toggleNav(true)">my work</a>
-            </li>
-            <li ng-class="{active: $location.path()=='about-me'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#about-me" ng-click="ctrl.toggleNav(true)">about me</a>
-            </li>
-            <li ng-class="{active: $location.path()=='work-with-me'}">
-              <a du-smooth-scroll du-scrollspy offset="70" ng-href="#work-with-me" ng-click="ctrl.toggleNav(true)">work with me</a>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <!-- <div collapse="nav.isCollapsed" id="navbarNav"> -->
+          <div collapse="nav.isCollapsed">
+            <ul class="nav navbar-nav">
+              <li>
+                <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="nav.toggleNav(true)">my work</a>
+              </li>
+              <li>
+                <a du-smooth-scroll du-scrollspy offset="70" ng-href="#about-me" ng-click="nav.toggleNav(true)">about me</a>
+              </li>
+              <li>
+                <a du-smooth-scroll du-scrollspy offset="70" ng-href="#work-with-me" ng-click="nav.toggleNav(true)">work with me</a>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+    </div>
 
     <!--
     /**
@@ -101,25 +108,25 @@
       </div>
       <div class="row">
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-websites')">
             <img src="/images/mywork-websites.png" alt="">
             <h2>websites</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-docs')">
             <img src="/images/mywork-docs.png" alt="">
             <h2>design documents</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-graphics')">
             <img src="/images/mywork-graphics.png" alt="">
             <h2>graphics</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-other')">
             <img src="/images/mywork-other.png" alt="">
             <h2>other</h2>
           </div>
@@ -225,35 +232,36 @@
       <div class="text-center wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="100ms">
         <h1>work with me</h1>
       </div>
-      <form class="container">
+      <form class="container" ng-submit="ctrl.contact()">
         <span class="input input--kozakura">
-          <input class="input__field input__field--kozakura" type="text" id="input-7">
+          <input class="input__field input__field--kozakura" type="text" id="input-7" ng-model="ctrl.form.name" ng-class="{active: ctrl.form.name}" required>
           <label class="input__label input__label--kozakura" for="input-7">
-            <span class="input__label-content input__label-content--kozakura" data-content="Name">Name</span>
+            <span ng-hide="ctrl.form.name" class="input__label-content input__label-content--kozakura" data-content="Name">Name</span>
           </label>
-          <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <svg ng-hide="ctrl.form.name" class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
             <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
           </svg>
         </span>
         <span class="input input--kozakura">
-          <input class="input__field input__field--kozakura" type="text" id="input-8">
+          <input class="input__field input__field--kozakura" type="email" id="input-8" ng-model="ctrl.form.email" ng-class="{active: ctrl.form.email}" required>
           <label class="input__label input__label--kozakura" for="input-8">
-            <span class="input__label-content input__label-content--kozakura" data-content="Email">Email</span>
+            <span ng-hide="ctrl.form.email" class="input__label-content input__label-content--kozakura" data-content="Email">Email</span>
           </label>
-          <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <svg ng-hide="ctrl.form.email" class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
             <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
           </svg>
         </span>
         <span class="input input--kozakura">
-          <input class="input__field input__field--kozakura" type="text" id="input-9">
+          <input class="input__field input__field--kozakura" type="text" id="input-9" ng-model="ctrl.form.website" ng-class="{active: ctrl.form.website}">
           <label class="input__label input__label--kozakura" for="input-9">
-            <span class="input__label-content input__label-content--kozakura" data-content="Website">Website</span>
+            <span ng-hide="ctrl.form.website" class="input__label-content input__label-content--kozakura" data-content="Website">Website</span>
           </label>
-          <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <svg ng-hide="ctrl.form.website" class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
             <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
           </svg>
         </span>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <hr>
+        <button type="submit" class="btn btn-default" ng-submit="ctrl.contact()" ng-disabled="ctrl.formSent">{{ ctrl.formSent ? 'Sent!' : 'Submit' }}</button>
       </form>
 
     </section>
@@ -290,6 +298,10 @@
     <script src="scripts/services/config.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/modalinstance.js"></script>
+    <script src="scripts/controllers/navigation.js"></script>
+    <script src="scripts/directives/trishModal.js"></script>
+    <script src="scripts/services/contact.js"></script>
+    <script src="scripts/services/alert.js"></script>
     <!-- endbuild -->
 
 </body>

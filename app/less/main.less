@@ -1,8 +1,8 @@
-// .navbar-equal-height-fix {
-//   // This class is for when the nav gets its fixed-class
-//   // preventing the content below to "fall up" when it happens.
-//   height: 70px;
-// }
+.navbar-equal-height-fix {
+  // This class is for when the nav gets its fixed-class
+  // preventing the content below to "fall up" when it happens.
+  height: 20px;
+}
 
 //**
 //* Global
@@ -79,6 +79,10 @@ body {
     background-color: #F28FC5;
     border-left: 1px solid #F3BCDF;
     border-right: 1px solid #8E416B;
+  }
+
+  &.active {
+    color: #F28FC5;
   }
 }
 
@@ -341,7 +345,8 @@ body {
 #work-with-me {
   border-top: 1px solid #DADADA;
   color: white;
-  padding: 0 25px;
+  padding: 25px;
+  min-height: 100vh;
   text-align: center;
 
   h1 {}
@@ -426,6 +431,9 @@ body {
   color: #2F3238;
   font-size: 1.55em;
   opacity: 0;
+  &.active {
+    opacity: 1;
+  }
 }
 
 .input__label--kozakura {
@@ -595,5 +603,3 @@ body {
   }
 
 }
-
-
