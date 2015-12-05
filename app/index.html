@@ -37,7 +37,7 @@
      */ -->
     <script type="text/ng-template" id="myModalContent.html">
       <div class="modal-header">
-        <h3 class="modal-title">Im a modal!</h3>
+        <h3 class="modal-title">{{ title }}</h3>
       </div>
       <div class="modal-body">
         <div style="height: 305px">
@@ -108,25 +108,25 @@
       </div>
       <div class="row">
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-websites')">
             <img src="/images/mywork-websites.png" alt="">
             <h2>websites</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-docs')">
             <img src="/images/mywork-docs.png" alt="">
             <h2>design documents</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-graphics')">
             <img src="/images/mywork-graphics.png" alt="">
             <h2>graphics</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" ng-click="ctrl.openModal('lg')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-other')">
             <img src="/images/mywork-other.png" alt="">
             <h2>other</h2>
           </div>
@@ -299,6 +299,7 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/modalinstance.js"></script>
     <script src="scripts/controllers/navigation.js"></script>
+    <script src="scripts/directives/trishModal.js"></script>
     <script src="scripts/services/contact.js"></script>
     <script src="scripts/services/alert.js"></script>
     <!-- endbuild -->

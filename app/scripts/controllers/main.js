@@ -14,7 +14,7 @@
   .module('trishApp')
   .controller('MainCtrl', MainCtrl);
 
-  function MainCtrl ($uibModal, Contact, Alert) {
+  function MainCtrl (Contact, Alert) {
 
     var vm = this;
 
@@ -26,8 +26,6 @@
 
     vm.contact = contact;
     vm.formSent = false;
-
-    vm.openModal = openModal;
 
     _init();
 
@@ -42,13 +40,6 @@
           vm.formSent = true;
         });
       }
-    }
-
-    function openModal () {
-      $uibModal.open({
-        templateUrl: 'myModalContent.html',
-        controller: 'ModalInstanceCtrl'
-      }).result.then();
     }
 
   }
