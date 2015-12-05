@@ -29,6 +29,7 @@ module.exports = function(config) {
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-scroll/angular-scroll.js',
+      'bower_components/bonzo/bonzo.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",

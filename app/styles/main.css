@@ -368,32 +368,31 @@ body {
   padding: 25px;
   min-height: 100vh;
   text-align: center;
-  /* Kozakura */
 }
 #work-with-me .text-center {
   margin: 100px 0 40px;
 }
 #work-with-me .input {
-  display: block;
-  margin: 1em auto;
-  max-width: 350px;
   position: relative;
-  vertical-align: top;
-  width: calc(98%);
   z-index: 1;
+  display: inline-block;
+  margin: 1em;
+  max-width: 350px;
+  width: calc(98%);
+  vertical-align: top;
 }
 #work-with-me .input__field {
-  background: #f0f0f0;
-  border-radius: 0;
-  border: none;
-  color: #aaa;
+  position: relative;
   display: block;
   float: right;
-  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
   padding: 0.8em;
-  position: relative;
   width: 60%;
+  border: none;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #aaa;
+  font-weight: 400;
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-appearance: none;
   /* for box shadows to show on iOS */
 }
@@ -446,9 +445,6 @@ body {
   font-size: 1.55em;
   opacity: 0;
 }
-#work-with-me .input__field--kozakura.active {
-  opacity: 1;
-}
 #work-with-me .input__label--kozakura {
   width: 100%;
   text-align: left;
@@ -479,6 +475,7 @@ body {
   color: #fff;
   padding: 0.25em 0;
   text-transform: uppercase;
+  letter-spacing: 1px;
   font-size: 0.85em;
 }
 #work-with-me .graphic--kozakura {
