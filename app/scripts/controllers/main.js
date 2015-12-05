@@ -14,12 +14,7 @@
   .module('trishApp')
   .controller('MainCtrl', MainCtrl);
 
-  /**
-  *
-  */
-  MainCtrl.$inject= ['$scope', '$document', '$window', '$timeout', '$modal', '$log'];
-
-  function MainCtrl ($scope, $document, $window, $timeout, $modal, $log) {
+  function MainCtrl ($scope, $document, $window, $timeout, $uibModal, $log, Contact, Alert) {
 
     var vm = this;
 
@@ -28,16 +23,19 @@
     var anchorElement = document.getElementById('anchorBeginIsScrolledDown');
     var navElement = document.getElementById('navbar');
 
+    vm.contact = contact;
+    vm.formSent = false;
     vm.isCollapsed = true;
     vm.isScrolledDown = null;
-    vm.toggleNav = toggleNav;
-    vm.scrollToTop = scrollToTop;
+    vm.form = {
+      name: null,
+      email: null,
+      website: null
+    };
 
-    vm.animationsEnabled = true;
-    vm.items = ['item1', 'item2', 'item3'];
     vm.openModal = openModal;
-    vm.selected = null;
-    vm.toggleAnimation = toggleAnimation;
+    vm.scrollToTop = scrollToTop;
+    vm.toggleNav = toggleNav;
 
     _init();
 
@@ -76,6 +74,15 @@
       _previousAnchorOffset = _currentAnchorOffset;
     }
 
+    function contact () {
+      if (!vm.formSent) {
+        Contact.post(vm.form).then(function () {
+          Alert.show('Your message has been sent!');
+          vm.formSent = true;
+        });
+      }
+    }
+
     function toggleNav (collapse) {
       $timeout(_setAnchorMarginBottom, 10);
       vm.isCollapsed = collapse || !vm.isCollapsed;
@@ -88,7 +95,7 @@
     }
 
     function openModal (size) {
-      var modalInstance = $modal.open({
+      var modalInstance = $uibModal.open({
         animation: vm.animationsEnabled,
         templateUrl: 'myModalContent.html',
         controller: 'ModalInstanceCtrl',
@@ -99,15 +106,7 @@
           }
         }
       });
-      modalInstance.result.then(function (selectedItem) {
-        vm.selected = selectedItem;
-      }, function () {
-        $log.info('Modal dismissed at: ' + new Date());
-      });
-    }
-
-    function toggleAnimation () {
-      vm.animationsEnabled = !vm.animationsEnabled;
+      modalInstance.result.then();
     }
 
   }

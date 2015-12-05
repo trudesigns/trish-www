@@ -56,6 +56,9 @@ body {
   border-left: 1px solid #F3BCDF;
   border-right: 1px solid #8E416B;
 }
+.navbar-inverse .navbar-nav > li > a.active {
+  color: #F28FC5;
+}
 .navbar-toggle {
   float: left;
   margin: 15px 0 0 30px;
@@ -265,7 +268,8 @@ body {
 #work-with-me {
   border-top: 1px solid #DADADA;
   color: white;
-  padding: 0 25px;
+  padding: 25px;
+  min-height: 100vh;
   text-align: center;
   /* Kozakura */
 }
@@ -341,6 +345,9 @@ body {
   color: #2F3238;
   font-size: 1.55em;
   opacity: 0;
+}
+#work-with-me .input__field--kozakura.active {
+  opacity: 1;
 }
 #work-with-me .input__label--kozakura {
   width: 100%;

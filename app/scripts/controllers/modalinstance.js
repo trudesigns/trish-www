@@ -12,11 +12,6 @@
   .module('trishApp')
   .controller('ModalInstanceCtrl', ModalInstanceCtrl);
 
-  /**
-  *
-  */
-  ModalInstanceCtrl.$inject = ['$scope'];
-
   function ModalInstanceCtrl($scope) {
 
     var slides = $scope.slides = [];

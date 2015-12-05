@@ -80,6 +80,10 @@ body {
     border-left: 1px solid #F3BCDF;
     border-right: 1px solid #8E416B;
   }
+
+  &.active {
+    color: #F28FC5;
+  }
 }
 
 .navbar-toggle {
@@ -341,7 +345,8 @@ body {
 #work-with-me {
   border-top: 1px solid #DADADA;
   color: white;
-  padding: 0 25px;
+  padding: 25px;
+  min-height: 100vh;
   text-align: center;
 
   h1 {}
@@ -426,6 +431,9 @@ body {
   color: #2F3238;
   font-size: 1.55em;
   opacity: 0;
+  &.active {
+    opacity: 1;
+  }
 }
 
 .input__label--kozakura {
@@ -595,5 +603,3 @@ body {
   }
 
 }
-
-
