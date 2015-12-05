@@ -11,7 +11,7 @@ section .text-center {
 }
 section h1 {
   color: #F28FC5;
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
   text-shadow: 0px 1px 1px #8F8F8F;
   text-transform: uppercase;
@@ -32,13 +32,25 @@ body {
   top: 8%;
 }
 .modal-content {
-  border-radius: 4px;
-}
-.modal-content .modal-header {
   background-color: #414042;
 }
+.modal-content .modal-header {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: none;
+}
 .modal-content .modal-header .close {
-  color: #fff;
+  color: #F28FC5;
+  background-color: #F2F2F2;
+  border-radius: 50%;
+  padding: 10px 10px 10px 12px;
+  border: 1px solid #585858;
+  opacity: 1;
+  text-shadow: none;
+}
+.modal-content .modal-header .close:hover {
+  color: #F2F2F2;
+  background-color: #F28FC5;
 }
 .modal-content .modal-header .modal-title {
   color: #fff;
@@ -47,11 +59,14 @@ body {
   color: #F28FC5;
 }
 .modal-content .modal-body {
-  background-color: #F2F2F2;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
   padding: 5px;
 }
 .modal-content .modal-body img {
   width: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 .modal-content .modal-body .carousel-control {
   background: none;
@@ -227,7 +242,7 @@ body {
   background-color: #414042;
   text-transform: uppercase;
   text-align: center;
-  font-size: 1.15em;
+  font-size: 1.3em;
   color: #F28FC5;
   text-shadow: 0px 2px 2px #000000;
 }
@@ -283,7 +298,7 @@ body {
 #about-me .about-top h3 {
   border-bottom: 5px solid #5CC1B1;
   color: #F28FC5;
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: bold;
   margin: 20px 0 0;
   padding: 0 0 10px;
@@ -322,11 +337,15 @@ body {
 #about-me .about-wrapper .about-content .about-content-image {
   border: 5px solid #fff;
   border-radius: 4px;
+  -webkit-box-shadow: 0 0 1px 0px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow: 0 0 1px 0px rgba(50, 50, 50, 0.4);
+  box-shadow: 0 1px 1px 1px rgba(50, 50, 50, 0.1);
   margin: 0 0 9px;
   width: 100%;
 }
 #about-me .about-wrapper .about-content .text {
   background-color: #414042;
+  border: 1px solid #5A5A5A;
   border-radius: 4px;
   color: #F28FC5;
   display: none;
@@ -336,9 +355,9 @@ body {
   line-height: 18px;
   padding: 10px;
   text-align: left;
-  -webkit-box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
-  box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(50, 50, 50, 0.35);
+  -moz-box-shadow: inset 0px 1px 1px 0px rgba(50, 50, 50, 0.35);
+  box-shadow: inset 0px 1px 1px 0px rgba(50, 50, 50, 0.35);
 }
 #about-me .about-wrapper .about-content .text p {
   margin: 0 auto 10px;
@@ -351,9 +370,12 @@ body {
   text-align: center;
   /* Kozakura */
 }
+#work-with-me .text-center {
+  margin: 100px 0 40px;
+}
 #work-with-me .input {
-  display: inline-block;
-  margin: 1em;
+  display: block;
+  margin: 1em auto;
   max-width: 350px;
   position: relative;
   vertical-align: top;
@@ -499,6 +521,9 @@ body {
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  section h1 {
+    font-size: 4em;
+  }
   .navbar {
     text-align: center;
   }

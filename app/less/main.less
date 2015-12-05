@@ -18,7 +18,7 @@ section {
 
   h1 {
     color: #F28FC5;
-    font-size: 4em;
+    font-size: 3em;
     text-align: center;
     text-shadow: 0px 1px 1px #8F8F8F;
     text-transform: uppercase;
@@ -44,13 +44,26 @@ body {
 }
 
 .modal-content {
-  border-radius: 4px;
+  background-color: #414042;
 
   .modal-header {
-    background-color: #414042;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: none;
 
     .close {
-      color: #fff;
+      color: #F28FC5;
+      background-color: #F2F2F2;
+      border-radius: 50%;
+      padding: 10px 10px 10px 12px;
+      border: 1px solid #585858;
+      opacity: 1;
+      text-shadow: none;
+
+      &:hover {
+        color: #F2F2F2;
+        background-color: #F28FC5;
+      }
     }
 
     .modal-title {
@@ -63,11 +76,14 @@ body {
   }
 
   .modal-body {
-    background-color: #F2F2F2;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
     padding: 5px;
 
     img {
       width: 100%;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
     }
 
     .carousel-control {
@@ -288,7 +304,7 @@ body {
       background-color: #414042;
       text-transform: uppercase;
       text-align: center;
-      font-size: 1.15em;
+      font-size: 1.3em;
       color: #F28FC5;
       text-shadow: 0px 2px 2px rgb(0, 0, 0);
     }
@@ -359,7 +375,7 @@ body {
     h3 {
       border-bottom: 5px solid #5CC1B1;
       color: #F28FC5;
-      font-size: 1.5em;
+      font-size: 1.7em;
       font-weight: bold;
       margin: 20px 0 0;
       padding: 0 0 10px;
@@ -403,12 +419,16 @@ body {
       .about-content-image {
         border: 5px solid #fff;
         border-radius: 4px;
+        -webkit-box-shadow: 0 0 1px 0px rgba(50, 50, 50, 0.4);
+        -moz-box-shadow: 0 0 1px 0px rgba(50, 50, 50, 0.4);
+        box-shadow: 0 1px 1px 1px rgba(50, 50, 50, 0.1);
         margin: 0 0 9px;
         width: 100%;
       }
 
       .text {
         background-color: #414042;
+        border: 1px solid #5A5A5A;
         border-radius: 4px;
         color: #F28FC5;
         display: none;
@@ -418,9 +438,9 @@ body {
         line-height: 18px;
         padding: 10px;
         text-align: left;
-        -webkit-box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
-        -moz-box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
-        box-shadow: inset 0px 2px 3px 0px rgba(50, 50, 50, 0.75);
+        -webkit-box-shadow: inset 0px 1px 1px 0px rgba(50, 50, 50, 0.35);
+        -moz-box-shadow: inset 0px 1px 1px 0px rgba(50, 50, 50, 0.35);
+        box-shadow: inset 0px 1px 1px 0px rgba(50, 50, 50, 0.35);
 
         p {
           margin: 0 auto 10px;
@@ -440,11 +460,13 @@ body {
   min-height: 100vh;
   text-align: center;
 
-  h1 {}
+  .text-center {
+    margin: 100px 0 40px;
+  }
 
   .input {
-  display: inline-block;
-  margin: 1em;
+  display: block;
+  margin: 1em auto;
   max-width: 350px;
   position: relative;
   vertical-align: top;
@@ -522,6 +544,7 @@ body {
   color: #2F3238;
   font-size: 1.55em;
   opacity: 0;
+
   &.active {
     opacity: 1;
   }
@@ -610,6 +633,16 @@ body {
 @media screen and (min-width: 768px) {
 
   //**
+  //* GLOBAL
+  //*/
+  section {
+
+    h1 {
+      font-size: 4em;
+    }
+  }
+
+  //**
   //* NAVIGATION
   //*/
   .navbar {
@@ -651,21 +684,6 @@ body {
   .nav li {
     background-color: transparent;
   }
-
-  //**
-  //* SECTION 1
-  //*/
-  #splash-page {}
-
-  //**
-  //* SECTION 2
-  //*/
-  #my-work {}
-
-  //**
-  //* SECTION 3
-  //*/
-  #about-me {}
 }
 
 @media screen and (min-width: 992px) {
