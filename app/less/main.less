@@ -39,6 +39,9 @@ body {
   letter-spacing: 2px;
 }
 
+.modal {
+  top: 8%;
+}
 
 .modal-content {
   border-radius: 4px;
@@ -61,6 +64,7 @@ body {
 
   .modal-body {
     background-color: #F2F2F2;
+    padding: 5px;
 
     img {
       width: 100%;
@@ -103,6 +107,18 @@ body {
   overflow: auto;
 }
 
+@media (min-width: 768px) {
+  .modal-lg {
+    width: 700px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal-lg {
+    width:1100px;
+  }
+}
+
 
 //**
 //* Navigation
@@ -113,7 +129,19 @@ body {
 
   .container-fluid {
     padding: 0;
+
+    .navbar-header {
+      margin: 0;
+    }
+
+    .navbar-nav {
+      margin: 7.5px 0;
+    }
   }
+}
+
+.navbar-fixed-top {
+  border-width: 1px;
 }
 
 .nav li {
@@ -135,14 +163,10 @@ body {
   text-shadow: 0px 2px 2px #000000;
   text-transform: uppercase;
 
-  &:hover {
+  &:hover, &.active {
     background-color: #F28FC5;
     border-left: 1px solid #F3BCDF;
     border-right: 1px solid #8E416B;
-  }
-
-  &.active {
-    color: #F28FC5;
   }
 }
 
@@ -296,9 +320,9 @@ body {
     margin: 0 0 30px;
     text-align: center;
 
-    &:hover .about-content {
+    &:hover .about-wrapper {
       background-color: rgba(65,64,66,0.92);
-      border-bottom: 13px solid #4F4F50;
+      border-bottom: 11px solid #4F4F50;
     }
 
     &:hover .about-pre-content {
@@ -311,7 +335,7 @@ body {
 
     &:hover .about-content .about-content-image {
       border: 1px solid #414042;
-      margin: 10px 0;
+      margin: 10px 0 9px;
     }
 
     &:hover .about-content .text {

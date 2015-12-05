@@ -34,6 +34,7 @@
               return title;
             }
           },
+          size: 'lg',
           templateUrl: 'myModalContent.html'
         }).result.then();
       }
