@@ -34,6 +34,9 @@ body {
 .modal-content .modal-header {
   background-color: #414042;
 }
+.modal-content .modal-header .close {
+  color: #fff;
+}
 .modal-content .modal-header .modal-title {
   color: #fff;
 }

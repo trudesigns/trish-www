@@ -31,7 +31,6 @@
     function _onScroll () {
       if (!_isChecking) {
         _isChecking = true;
-        console.log(vm.isScrolledDown);
         $scope.$evalAsync(function () {
           _setIsScrolledDown();
           _isChecking = false;

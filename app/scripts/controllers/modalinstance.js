@@ -12,7 +12,7 @@
   .module('trishApp')
   .controller('ModalInstanceCtrl', ModalInstanceCtrl);
 
-  function ModalInstanceCtrl($scope, title) {
+  function ModalInstanceCtrl($scope, $uibModalInstance, title) {
 
     var slides = $scope.slides = [];
 
@@ -28,6 +28,10 @@
     for (var i=0; i<4; i++) {
       $scope.addSlide();
     }
+
+    $scope.close = function () {
+      $uibModalInstance.close();
+    };
 
     $scope.title = title;
 
