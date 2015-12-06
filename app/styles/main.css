@@ -81,8 +81,14 @@ body {
   width: 0;
 }
 .modal-content .modal-body .carousel-control span {
-  margin-right: 0;
-  margin-left: 0;
+  margin-right: 15px;
+  margin-left: 15px;
+  color: #f28fc5;
+  background-color: #F2F2F2;
+  border-radius: 50%;
+  padding: 10px 10px 10px 12px;
+  opacity: 1;
+  text-shadow: none;
 }
 .modal-content .modal-body .carousel-indicators {
   margin-bottom: 0;
@@ -352,29 +358,35 @@ body {
   text-align: center;
 }
 #work-with-me .text-center {
-  margin: 100px 0 40px;
+  margin: 100px 0 0px;
 }
 #work-with-me .input {
-  position: relative;
-  z-index: 1;
   display: block;
+  font-size: 150%;
   margin: 1em auto;
   max-width: 400px;
-  width: calc(98%);
+  overflow: hidden;
+  padding-bottom: 1em;
+  position: relative;
   vertical-align: top;
+  width: calc(98%);
+  z-index: 1;
 }
 #work-with-me .input__field {
-  position: relative;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  color: #f28fc5;
   display: block;
   float: right;
-  padding: 0.8em;
-  width: 60%;
-  border: none;
-  border-radius: 0;
-  background: #f0f0f0;
-  color: #aaa;
-  font-weight: 400;
   font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.55em;
+  font-weight: 400;
+  margin-top: 1.25em;
+  opacity: 0;
+  padding: 0.25em 0.5em;
+  position: relative;
+  width: 100%;
   -webkit-appearance: none;
   /* for box shadows to show on iOS */
 }
@@ -382,13 +394,18 @@ body {
   outline: none;
 }
 #work-with-me .input__label {
+  color: #f28fc5;
   display: inline-block;
   float: right;
-  padding: 0 1em;
-  width: 40%;
-  color: #f28fc5;
-  font-weight: bold;
   font-size: 70.25%;
+  font-weight: bold;
+  overflow: hidden;
+  padding: 0 0.25em;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  top: 1em;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-touch-callout: none;
@@ -397,106 +414,77 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-#work-with-me .input__label-content {
-  position: relative;
-  display: block;
-  padding: 1.6em 0;
-  width: 100%;
-}
-#work-with-me .graphic {
-  position: absolute;
-  top: 0;
-  left: 0;
-  fill: none;
-}
-#work-with-me .icon {
-  color: #ddd;
-  font-size: 150%;
-}
-#work-with-me .input--kozakura {
-  overflow: hidden;
-  padding-bottom: 1em;
-}
-#work-with-me .input__field--kozakura {
-  padding: 0.25em 0.5em;
-  margin-top: 1.25em;
-  width: 100%;
-  background: transparent;
-  color: #f28fc5;
-  font-size: 1.55em;
-  opacity: 0;
-}
-#work-with-me .input__label--kozakura {
-  width: 100%;
-  text-align: left;
-  position: absolute;
-  top: 1em;
-  pointer-events: none;
-  overflow: hidden;
-  padding: 0 0.25em;
   -webkit-transform: translate3d(1em, 2.75em, 0);
   transform: translate3d(1em, 2.75em, 0);
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
-#work-with-me .input__label-content--kozakura {
+#work-with-me .input__label-content {
   color: #f28fc5;
+  display: block;
   padding: 0.4em 0 0.25em;
+  position: relative;
+  width: 100%;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
-#work-with-me .input__label-content--kozakura::after {
-  content: attr(data-content);
-  position: absolute;
-  font-weight: 800;
-  top: 100%;
-  left: 0;
-  height: 100%;
-  width: 100%;
+#work-with-me .input__label-content:after {
   color: #f28fc5;
-  padding: 0.25em 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  content: attr(data-content);
   font-size: 0.85em;
+  font-weight: 800;
+  height: 100%;
+  left: 0;
+  letter-spacing: 1px;
+  padding: 0.25em 0;
+  position: absolute;
+  text-transform: uppercase;
+  top: 100%;
+  width: 100%;
 }
-#work-with-me .graphic--kozakura {
-  fill: #414042;
-  pointer-events: none;
-  top: 1em;
+#work-with-me .input__field:focus,
+#work-with-me .input--filled .input__field {
+  -webkit-transition: opacity 0s 0.35s;
+  transition: opacity 0s 0.35s;
+  opacity: 1;
+}
+#work-with-me .input__field:focus + .input__label,
+#work-with-me .input--filled .input__label {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+#work-with-me .input__field:focus + .input__label .input__label-content,
+#work-with-me .input--filled .input__label-content {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+#work-with-me .input__field:focus ~ .graphic,
+#work-with-me .input--filled .graphic {
+  fill: #F2F2F2;
+  -webkit-transform: translate3d(-66.6%, 0, 0);
+  transform: translate3d(-66.6%, 0, 0);
+}
+#work-with-me .graphic {
   bottom: 0px;
+  fill: #414042;
   height: 4.5em;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 1em;
   z-index: -1;
   -webkit-transition: -webkit-transform 0.7s, fill 0.7s;
   transition: transform 0.7s, fill 0.7s;
   -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
   transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
 }
-#work-with-me .input__field--kozakura:focus,
-#work-with-me .input--filled .input__field--kozakura {
-  -webkit-transition: opacity 0s 0.35s;
-  transition: opacity 0s 0.35s;
-  opacity: 1;
-}
-#work-with-me .input__field--kozakura:focus + .input__label--kozakura,
-#work-with-me .input--filled .input__label--kozakura {
-  -webkit-transition-delay: 0.15s;
-  transition-delay: 0.15s;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-#work-with-me .input__field--kozakura:focus + .input__label--kozakura .input__label-content--kozakura,
-#work-with-me .input--filled .input__label-content--kozakura {
-  -webkit-transition-delay: 0.15s;
-  transition-delay: 0.15s;
-  -webkit-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);
-}
-#work-with-me .input__field--kozakura:focus ~ .graphic--kozakura,
-#work-with-me .input--filled .graphic--kozakura {
-  fill: #F2F2F2;
-  -webkit-transform: translate3d(-66.6%, 0, 0);
-  transform: translate3d(-66.6%, 0, 0);
+#work-with-me .icon {
+  color: #ddd;
+  font-size: 150%;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
