@@ -11,7 +11,7 @@
   angular.module('trishApp')
     .service('Alert', Alert);
 
-    function Alert ($modal) {
+    function Alert ($uibModal) {
       // AngularJS will instantiate a singleton by calling "new" on this function
 
       /**
@@ -30,11 +30,11 @@
           '</div>';
 
 
-        var modalInstance = $modal.open({
+        var modalInstance = $uibModal.open({
           template: template,
-          controller: function ($scope, $modalInstance, message) {
+          controller: function ($scope, $uibModalInstance, message) {
             $scope.close = function () {
-              $modalInstance.close();
+              $uibModalInstance.close();
             };
             $scope.message = message;
           },

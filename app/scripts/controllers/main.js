@@ -25,7 +25,6 @@
     };
 
     vm.contact = contact;
-    vm.formSent = false;
 
     _init();
 
@@ -34,12 +33,14 @@
     }
 
     function contact () {
-      if (!vm.formSent) {
-        Contact.post(vm.form).then(function () {
-          Alert.show('Your message has been sent!');
-          vm.formSent = true;
-        });
-      }
+      Contact.post(vm.form).then(function () {
+        Alert.show('Your message has been sent!');
+        vm.form = {
+          name: null,
+          email: null,
+          website: null
+        };
+      });
     }
 
   }
