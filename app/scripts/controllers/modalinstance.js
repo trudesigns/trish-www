@@ -16,9 +16,9 @@
     /* jshint validthis: true */
     var vm = this;
 
-    vm.close = close;
+    vm.closeModal = closeModal;
     vm.getActiveSlideTitle = getActiveSlideTitle;
-    
+
     _init();
 
     function _init () {
@@ -30,7 +30,7 @@
       return result[0] ? result[0] : null;
     }
 
-    function close () {
+    function closeModal () {
       $uibModalInstance.close();
     }
 
