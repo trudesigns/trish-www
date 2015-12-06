@@ -26,12 +26,13 @@
 
       vm.openModal = openModal;
 
-      function openModal (title) {
+      function openModal (filter) {
         $uibModal.open({
           controller: 'ModalInstanceCtrl',
+          controllerAs: 'ModalInstanceCtrl',
           resolve: {
-            title: function () {
-              return title;
+            filter: function () {
+              return filter;
             }
           },
           size: 'lg',

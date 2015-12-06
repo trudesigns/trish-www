@@ -37,7 +37,7 @@
      */ -->
     <script type="text/ng-template" id="myModalContent.html">
       <div class="modal-header">
-        <span class="close fa fa-close fa-lg pull-right" ng-click="close()"></span>
+        <span class="close fa fa-close fa-lg pull-right" ng-click="ModalInstanceCtrl.close()"></span>
         <h3 class="modal-title">{{ title }}</h3>
       </div>
       <div class="modal-body">
@@ -109,25 +109,25 @@
       </div>
       <div class="row">
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-websites')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('websites')">
             <img src="/images/mywork-websites.png" alt="">
             <h2>websites</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-docs')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('designDocs')">
             <img src="/images/mywork-docs.png" alt="">
             <h2>design documents</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-graphics')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('graphics')">
             <img src="/images/mywork-graphics.png" alt="">
             <h2>graphics</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('mywork-other')">
+          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('other')">
             <img src="/images/mywork-other.png" alt="">
             <h2>other</h2>
           </div>
