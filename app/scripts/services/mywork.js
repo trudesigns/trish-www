@@ -19,16 +19,16 @@
         link : 'http://lavote.net',
         text : 'Redesigned'
       },
-      {
-        image : '/images/mywork/websites/3_parallax_responsiveSITE.mov',
-        link : '',
-        text : 'Live example of simplyintegrated design'
-      },
-      {
-        image : '/images/mywork/websites/4_responsiveSiteVideo.mov',
-        link : '',
-        text : 'Live example of new responsive ImplantDirect design'
-      },
+      // {
+      //   image : '/images/mywork/websites/3_parallax_responsiveSITE.mov',
+      //   link : '',
+      //   text : 'Live example of simplyintegrated design'
+      // },
+      // {
+      //   image : '/images/mywork/websites/4_responsiveSiteVideo.mov',
+      //   link : '',
+      //   text : 'Live example of new responsive ImplantDirect design'
+      // },
       {
         image : '/images/mywork/websites/5_truDesigns_mockup.png',
         link : '',
