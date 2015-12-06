@@ -14,31 +14,31 @@
         restrict: 'A'
       };
 
-      function link () {
-
+      function link (scope, element, attributes, ctrl) {
+        function onClick () {
+          ctrl.openModal(attributes.filter);
+        }
+        angular.element(element[0]).bind('click', onClick);
       }
 
     }
 
-    function controller ($uibModal) {
+    function controller ($uibModal, $filter, MyWork) {
       /* jshint validthis: true */
-      var vm = this;
-
-      vm.openModal = openModal;
-
-      function openModal (filter) {
+      this.openModal = function (filterOn) {
         $uibModal.open({
           controller: 'ModalInstanceCtrl',
           controllerAs: 'ModalInstanceCtrl',
           resolve: {
-            filter: function () {
-              return filter;
+            slides: function () {
+              var slides = $filter('filter')(MyWork.slides, {image: filterOn});
+              return slides;
             }
           },
           size: 'lg',
           templateUrl: 'myModalContent.html'
         }).result.then();
-      }
+      };
 
     }
 

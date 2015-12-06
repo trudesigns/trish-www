@@ -18,29 +18,30 @@
 
     var vm = this;
 
-    vm.form = {
-      name: null,
-      email: null,
-      website: null
-    };
-
     vm.contact = contact;
 
     _init();
 
     function _init () {
+      _resetForm();
       new WOW().init();
+    }
+
+    function _resetForm () {
+      vm.form = {
+        name: null,
+        email: null,
+        website: null
+      };
     }
 
     function contact () {
       Contact.post(vm.form).then(function () {
         Alert.show('Your message has been sent!');
-        vm.form = {
-          name: null,
-          email: null,
-          website: null
-        };
+      }, function () {
+        Alert.show('Oops! Your message could not be sent!');
       });
+      _resetForm();
     }
 
   }

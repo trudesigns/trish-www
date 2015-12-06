@@ -38,17 +38,13 @@
     <script type="text/ng-template" id="myModalContent.html">
       <div class="modal-header">
         <span class="close fa fa-close fa-lg pull-right" ng-click="ModalInstanceCtrl.close()"></span>
-        <h3 class="modal-title">{{ title }}</h3>
+        <h3 class="modal-title" ng-bind-html="ModalInstanceCtrl.getActiveSlideTitle()"></h3>
       </div>
       <div class="modal-body">
         <div>
           <uib-carousel>
-            <uib-slide ng-repeat="slide in slides" active="slide.active">
-              <img ng-src="{{slide.image}}" style="margin:auto;">
-              <div class="carousel-caption">
-                <h4>Slide {{$index}}</h4>
-                <p>{{slide.text}}</p>
-              </div>
+            <uib-slide ng-repeat="slide in ModalInstanceCtrl.slides" active="slide.active">
+              <img ng-src="{{ slide.image }}" style="margin:auto;">
             </uib-slide>
           </uib-carousel>
         </div>
@@ -109,25 +105,25 @@
       </div>
       <div class="row">
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('websites')">
+          <div class="well well-effect" trish-modal filter="mywork/websites">
             <img src="/images/mywork-websites.png" alt="">
             <h2>websites</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('designDocs')">
+          <div class="well well-effect" trish-modal filter="mywork/designDoc">
             <img src="/images/mywork-docs.png" alt="">
             <h2>design documents</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('graphics')">
+          <div class="well well-effect" trish-modal filter="mywork/graphics">
             <img src="/images/mywork-graphics.png" alt="">
             <h2>graphics</h2>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" trish-modal ng-click="ModalCtrl.openModal('other')">
+          <div class="well well-effect" trish-modal filter="mywork/other">
             <img src="/images/mywork-other.png" alt="">
             <h2>other</h2>
           </div>
@@ -284,13 +280,13 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/wow/dist/wow.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/wow/dist/wow.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -303,6 +299,7 @@
     <script src="scripts/directives/trishModal.js"></script>
     <script src="scripts/services/contact.js"></script>
     <script src="scripts/services/alert.js"></script>
+    <script src="scripts/services/mywork.js"></script>
     <!-- endbuild -->
 
 </body>
