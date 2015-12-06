@@ -12,18 +12,29 @@
   .module('trishApp')
   .controller('ModalInstanceCtrl', ModalInstanceCtrl);
 
-  function ModalInstanceCtrl($scope, $uibModalInstance, slides, $filter) {
+  function ModalInstanceCtrl ($uibModalInstance, slides, $filter) {
+    /* jshint validthis: true */
+    var vm = this;
+
+    vm.close = close;
+    vm.getActiveSlideTitle = getActiveSlideTitle;
+    
+    _init();
+
+    function _init () {
+      vm.slides = slides;
+    }
 
     function _getActiveSlide () {
       var result = $filter('filter')(slides, {active: true});
       return result[0] ? result[0] : null;
     }
 
-    this.close = function () {
+    function close () {
       $uibModalInstance.close();
-    };
+    }
 
-    this.getActiveSlideTitle = function () {
+    function getActiveSlideTitle () {
       var slide = _getActiveSlide();
       if (slide) {
         if (slide.link) {
@@ -32,9 +43,7 @@
           return slide.text;
         }
       }
-    };
-
-    this.slides = slides;
+    }
 
   }
 

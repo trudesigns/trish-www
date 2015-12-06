@@ -23,22 +23,27 @@
 
     }
 
-    function controller ($uibModal, $filter, MyWork) {
+    function controller ($uibModal, $filter) {
       /* jshint validthis: true */
-      this.openModal = function (filterOn) {
+      var vm = this;
+
+      vm.openModal = openModal;
+
+      function openModal (filterOn) {
         $uibModal.open({
           controller: 'ModalInstanceCtrl',
           controllerAs: 'ModalInstanceCtrl',
           resolve: {
-            slides: function () {
-              var slides = $filter('filter')(MyWork.slides, {image: filterOn});
-              return slides;
+            slides: function (MyWork) {
+              var filter = $filter('filter');
+              var slides = filter(MyWork.slides, {image: filterOn});
+              return angular.copy(slides);
             }
           },
           size: 'lg',
           templateUrl: 'myModalContent.html'
         }).result.then();
-      };
+      }
 
     }
 
