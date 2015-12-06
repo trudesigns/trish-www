@@ -28,8 +28,9 @@
      * Section 1
      */ -->
     <div id="splash-page">
-      <div class="profile-photo"><img src="images/profile-photo.png" alt="Profile photo"></div>
-      <div class="logo"><img src="images/logo.png" alt="logo"></div>
+      <img id="splash-1" src="images/splash-bg/768.png" alt="Trish, UX and UI Designer">
+      <img id="splash-2" src="images/splash-bg/1280.png" alt="Trish, UX and UI Designer">
+      <img id="splash-3" src="images/splash-bg/1600.png" alt="Trish, UX and UI Designer">
     </div>
 
     <!--
@@ -235,30 +236,30 @@
         <h1>work with me</h1>
       </div>
       <form class="container" ng-submit="ctrl.contact()">
-        <span class="input input--kozakura">
-          <input class="input__field input__field--kozakura" type="text" id="input-1" ng-model="ctrl.form.name" ng-class="{active: ctrl.form.name}" required>
+        <span class="input input--kozakura" ng-class="{'input--filled': ctrl.form.name}">
+          <input class="input__field input__field--kozakura" type="text" id="input-1" ng-model="ctrl.form.name" required>
           <label class="input__label input__label--kozakura" for="input-1">
-            <span ng-hide="ctrl.form.name" class="input__label-content input__label-content--kozakura" data-content="Name">Name</span>
+            <span class="input__label-content input__label-content--kozakura" data-content="Name">Name</span>
           </label>
-          <svg ng-hide="ctrl.form.name" class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
             <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
           </svg>
         </span>
-        <span class="input input--kozakura">
-          <input class="input__field input__field--kozakura" type="email" id="input-2" ng-model="ctrl.form.email" ng-class="{active: ctrl.form.email}" required>
+        <span class="input input--kozakura" ng-class="{'input--filled': ctrl.form.email}">
+          <input class="input__field input__field--kozakura" type="email" id="input-2" ng-model="ctrl.form.email" required>
           <label class="input__label input__label--kozakura" for="input-2">
-            <span ng-hide="ctrl.form.email" class="input__label-content input__label-content--kozakura" data-content="Email">Email</span>
+            <span class="input__label-content input__label-content--kozakura" data-content="Email">Email</span>
           </label>
-          <svg ng-hide="ctrl.form.email" class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
             <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
           </svg>
         </span>
-        <span class="input input--kozakura">
-          <input class="input__field input__field--kozakura" type="text" id="input-3" ng-model="ctrl.form.website" ng-class="{active: ctrl.form.website}">
+        <span class="input input--kozakura" ng-class="{'input--filled': ctrl.form.website}">
+          <input class="input__field input__field--kozakura" type="text" id="input-3" ng-model="ctrl.form.website">
           <label class="input__label input__label--kozakura" for="input-3">
-            <span ng-hide="ctrl.form.website" class="input__label-content input__label-content--kozakura" data-content="Website">Website</span>
+            <span class="input__label-content input__label-content--kozakura" data-content="Website">Website</span>
           </label>
-          <svg ng-hide="ctrl.form.website" class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
             <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>
           </svg>
         </span>
@@ -292,7 +293,6 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="bower_components/angular-scroll/angular-scroll.js"></script>
-    <script src="bower_components/bonzo/bonzo.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -11,7 +11,7 @@ section .text-center {
 }
 section h1 {
   color: #F28FC5;
-  font-size: 3em;
+  font-size: 2.7em;
   text-align: center;
   text-shadow: 0px 1px 1px #8F8F8F;
   text-transform: uppercase;
@@ -94,16 +94,6 @@ body {
 }
 .modal-open {
   overflow: auto;
-}
-@media (min-width: 768px) {
-  .modal-lg {
-    width: 700px;
-  }
-}
-@media (min-width: 1200px) {
-  .modal-lg {
-    width: 1100px;
-  }
 }
 #navbar {
   border-radius: 0;
@@ -197,25 +187,9 @@ body {
   -moz-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-#splash-page {
-  background: url(/images/splash.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  position: relative;
-  height: 100vh;
-}
 #splash-page img {
+  display: none;
   width: 100%;
-}
-#splash-page .profile-photo {
-  margin: 0 auto;
-  max-width: 250px;
-}
-#splash-page .logo {
-  margin: 0 auto;
-  max-width: 600px;
 }
 #my-work .well-effect {
   position: relative;
@@ -375,9 +349,9 @@ body {
 #work-with-me .input {
   position: relative;
   z-index: 1;
-  display: inline-block;
-  margin: 1em;
-  max-width: 350px;
+  display: block;
+  margin: 1em auto;
+  max-width: 400px;
   width: calc(98%);
   vertical-align: top;
 }
@@ -404,7 +378,7 @@ body {
   float: right;
   padding: 0 1em;
   width: 40%;
-  color: #696969;
+  color: #F28FC5;
   font-weight: bold;
   font-size: 70.25%;
   -webkit-font-smoothing: antialiased;
@@ -441,7 +415,7 @@ body {
   margin-top: 1.25em;
   width: 100%;
   background: transparent;
-  color: #2F3238;
+  color: #F28FC5;
   font-size: 1.55em;
   opacity: 0;
 }
@@ -459,7 +433,7 @@ body {
   transition: transform 0.3s;
 }
 #work-with-me .input__label-content--kozakura {
-  color: #A4A5A6;
+  color: #F28FC5;
   padding: 0.4em 0 0.25em;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -472,14 +446,14 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  color: #fff;
+  color: #F28FC5;
   padding: 0.25em 0;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.85em;
 }
 #work-with-me .graphic--kozakura {
-  fill: #494E57;
+  fill: #414042;
   pointer-events: none;
   top: 1em;
   bottom: 0px;
@@ -512,7 +486,7 @@ body {
 }
 #work-with-me .input__field--kozakura:focus ~ .graphic--kozakura,
 #work-with-me .input--filled .graphic--kozakura {
-  fill: #fff;
+  fill: #F2F2F2;
   -webkit-transform: translate3d(-66.6%, 0, 0);
   transform: translate3d(-66.6%, 0, 0);
 }
@@ -555,9 +529,32 @@ body {
     background-color: transparent;
   }
 }
+@media (max-width: 767px) {
+  #splash-page #splash-1 {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #splash-page #splash-2 {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .modal-lg {
+    width: 700px;
+  }
+}
 @media screen and (min-width: 992px) {
   section .center {
     width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  #splash-page #splash-3 {
+    display: block;
+  }
+  .modal-lg {
+    width: 1100px;
   }
 }
 @media screen and (min-width: 1400px) {
