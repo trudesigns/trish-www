@@ -12,6 +12,7 @@
   .module('trishApp')
   .controller('ModalInstanceCtrl', ModalInstanceCtrl);
 
+  /* @ngInject */
   function ModalInstanceCtrl ($uibModalInstance, slides, $filter) {
     /* jshint validthis: true */
     var vm = this;

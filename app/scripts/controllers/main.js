@@ -14,6 +14,7 @@
   .module('trishApp')
   .controller('MainCtrl', MainCtrl);
 
+  /* @ngInject */
   function MainCtrl (Contact, Alert) {
     /* jshint validthis: true */
     var vm = this;

@@ -5,6 +5,7 @@
     .module('trishApp')
     .controller('NavigationCtrl', NavigationCtrl);
 
+  /* @ngInject */
   function NavigationCtrl ($scope, $document, $window, $timeout) {
     /* jshint validthis: true */
     var vm = this;

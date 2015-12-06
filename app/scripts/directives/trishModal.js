@@ -23,6 +23,7 @@
 
     }
 
+    /* @ngInject */
     function controller ($uibModal, $filter, MyWork) {
       /* jshint validthis: true */
       var vm = this;
