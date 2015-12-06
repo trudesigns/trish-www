@@ -187,8 +187,13 @@ body {
   -moz-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+#splash-page {
+  height: 100vh;
+  overflow: hidden;
+}
 #splash-page img {
   width: 100%;
+  margin: 20vh 0 0;
 }
 #my-work .well-effect {
   position: relative;
@@ -491,8 +496,14 @@ body {
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  #splash-page img {
+    margin: 5vh 0 0 0;
+  }
   section h1 {
     font-size: 4em;
+  }
+  .modal-lg {
+    width: 700px;
   }
   .navbar {
     text-align: center;
@@ -528,11 +539,6 @@ body {
     background-color: transparent;
   }
 }
-@media screen and (min-width: 768px) {
-  .modal-lg {
-    width: 700px;
-  }
-}
 @media screen and (min-width: 992px) {
   section .center {
     width: 50%;
@@ -545,7 +551,6 @@ body {
 }
 @media screen and (min-width: 1280px) {
   #splash-page {
-    height: 100vh;
     background: url(/images/splash-bg/1600.png) no-repeat 50% center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

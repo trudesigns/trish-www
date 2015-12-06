@@ -237,10 +237,12 @@ body {
 //* Section 1 - Hero
 //*/
 #splash-page {
-
+  height: 100vh;
+  overflow: hidden;
 
   img {
-    width: 100%
+    width: 100%;
+    margin: 20vh 0 0;
   }
 }
 
@@ -598,6 +600,12 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  #splash-page {
+
+    img {
+      margin: 5vh 0 0 0;
+    }
+  }
 
   //**
   //* GLOBAL
@@ -607,6 +615,10 @@ body {
     h1 {
       font-size: 4em;
     }
+  }
+
+  .modal-lg {
+    width: 700px;
   }
 
   //**
@@ -653,13 +665,6 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
-
-  .modal-lg {
-    width: 700px;
-  }
-}
-
 @media screen and (min-width: 992px) {
 
   //**
@@ -683,7 +688,6 @@ body {
 @media screen and (min-width: 1280px) {
 
   #splash-page {
-    height: 100vh;
     background: url(/images/splash-bg/1600.png) no-repeat 50% center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
