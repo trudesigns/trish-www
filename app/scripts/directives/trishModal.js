@@ -23,7 +23,7 @@
 
     }
 
-    function controller ($uibModal, $filter) {
+    function controller ($uibModal, $filter, MyWork) {
       /* jshint validthis: true */
       var vm = this;
 
@@ -34,7 +34,7 @@
           controller: 'ModalInstanceCtrl',
           controllerAs: 'ModalInstanceCtrl',
           resolve: {
-            slides: function (MyWork) {
+            slides: function () {
               var filter = $filter('filter');
               var slides = filter(MyWork.slides, {image: filterOn});
               return angular.copy(slides);
