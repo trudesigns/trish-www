@@ -7,14 +7,14 @@
   },
   "stage": {
     "basePath": "/",
-    "siteUrl": "http://www.trish-stage.thehost.se/",
-    "apiUrl": "http://www.trish-api-stage.thehost.se/",
+    "siteUrl": "http://trish-stage.thehost.se/",
+    "apiUrl": "http://trish-api-stage.thehost.se/",
     "gaKey": "UA-XXXXXXXX-X"
   },
   "production": {
     "basePath": "/",
-    "siteUrl": "http://www.trish.thehost.se/",
-    "apiUrl": "http://www.trish-api.thehost.se/",
+    "siteUrl": "http://trishid.com/",
+    "apiUrl": "http://trish-api.thehost.se/",
     "gaKey": "UA-XXXXXXXX-X"
   }
 }
