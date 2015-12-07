@@ -21,23 +21,8 @@
        * @return {[type]}      [description]
        */
       this.post = function (data) {
-        var message = 'Hello Trish! \n' +
-          ' \n' +
-          'There\'s someone who\'d like to meet you! \n' +
-          ' \n' +
-          data.name +
-            ' (' + data.email +
-            (function (w) { return w ? ' and ' + w : ''; })(data.website) +
-            ') \n' +
-          ' \n' +
-          ' \n' +
-          'This is an automated message from ' +
-            config.siteUrl +
-            '.' +
-          ' \n';
-
         return $http({
-          data: message,
+          data: data,
           headers: {'Content-Type': 'application/json; charset=utf-8'},
           method: 'POST',
           url: config.apiUrl + 'contact'
