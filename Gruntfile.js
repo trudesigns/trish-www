@@ -171,12 +171,12 @@ module.exports = function (grunt) {
       },
       production: {
         auth: {
-          host: 'ftp.thehost.se',
+          host: 'ftp.trishid.com',
           port: 21,
-          authKey: 'key1'
+          authKey: 'productionKey'
         },
         src: 'dist/',
-        dest: 'trish/',
+        dest: 'public_html/',
         exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/.htaccess']
       }
     },

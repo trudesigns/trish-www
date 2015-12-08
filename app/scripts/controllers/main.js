@@ -30,9 +30,9 @@
 
     function _resetForm () {
       vm.form = {
-        name: null,
-        email: null,
-        website: null
+        "name": null,
+        "email": null,
+        "message": null
       };
     }
 
