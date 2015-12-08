@@ -81,8 +81,6 @@ body {
   width: 0;
 }
 .modal-content .modal-body .carousel-control span {
-  background-color: #F2F2F2;
-  border-radius: 50%;
   color: #f28fc5;
   height: auto;
   line-height: 0px;
