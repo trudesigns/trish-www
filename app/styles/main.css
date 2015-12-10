@@ -199,12 +199,34 @@ body {
 #splash-page {
   height: 100vh;
   overflow: hidden;
+  text-align: center;
+  width: 100%;
 }
 #splash-page img {
-  width: 100%;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  width: 100%;
+}
+#splash-page #splash-page-bottom {
+  bottom: 5%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+#splash-page #splash-page-bottom a:hover .fa-angle-down {
+  color: #fff;
+  background-color: #f28fc5;
+}
+#splash-page #splash-page-bottom a .fa-angle-down {
+  animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #f28fc5;
+  color: #f28fc5;
+  font-size: 60px;
+  padding: 0 11px;
 }
 #my-work .well-effect {
   position: relative;
