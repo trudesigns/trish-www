@@ -27,6 +27,7 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.loadNpmTasks('grunt-ng-constant');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-ftp-deploy');
@@ -170,12 +171,12 @@ module.exports = function (grunt) {
       },
       production: {
         auth: {
-          host: 'ftp.thehost.se',
+          host: 'ftp.trishid.com',
           port: 21,
-          authKey: 'key1'
+          authKey: 'productionKey'
         },
         src: 'dist/',
-        dest: 'trish/',
+        dest: 'public_html/',
         exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/.htaccess']
       }
     },
@@ -382,16 +383,16 @@ module.exports = function (grunt) {
     },
 
     // Renames files for browser caching purposes
-    filerev: {
-      dist: {
-        src: [
-          '<%= yeoman.dist %>/scripts/{,*/}*.js',
-          '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/fonts/*'
-        ]
-      }
-    },
+    // filerev: {
+    //   dist: {
+    //     src: [
+    //       '<%= yeoman.dist %>/scripts/**/*.js',
+    //       '<%= yeoman.dist %>/styles/**/*.css',
+    //       '<%= yeoman.dist %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
+    //       '<%= yeoman.dist %>/fonts/**/*'
+    //     ]
+    //   }
+    // },
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -460,7 +461,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          src: '**/*.{png,jpg,jpeg,gif}',
           dest: '<%= yeoman.dist %>/images'
         }]
       }
@@ -471,7 +472,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
+          src: '**/*.svg',
           dest: '<%= yeoman.dist %>/images'
         }]
       }
@@ -507,16 +508,26 @@ module.exports = function (grunt) {
       }
     },
 
-    // ng-annotate tries to make the code safe for minification automatically
-    // by using the Angular long form for dependency injection.
+    // // ng-annotate tries to make the code safe for minification automatically
+    // // by using the Angular long form for dependency injection.
+    // ngAnnotate: {
+    //   dist: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: '.tmp/concat/scripts',
+    //       src: '*.js',
+    //       dest: '.tmp/concat/scripts'
+    //     }]
+    //   }
+    // },
     ngAnnotate: {
+      options: {
+        singleQuotes: true
+      },
       dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: '*.js',
-          dest: '.tmp/concat/scripts'
-        }]
+        expand: true,
+        src: ['.tmp/concat/scripts/**/*.js'],
+        extDot: 'last'
       }
     },
 
@@ -631,7 +642,7 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'filerev',
+    // 'filerev',
     'usemin',
     'htmlmin'
   ]);

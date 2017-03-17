@@ -23,8 +23,12 @@ module.exports = function(config) {
     files: [
       // bower:js
       'bower_components/angular/angular.js',
+      'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-scroll/angular-scroll.js',
+      'bower_components/angular-touch/angular-touch.js',
+      'bower_components/wow/dist/wow.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
