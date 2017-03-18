@@ -58,6 +58,26 @@
 
     <!--
     /**
+     * NEW Modal template
+     */ -->
+    <script type="text/ng-template" id="newModalContent.html">
+      <div class="modal-header">
+        <span class="close fa fa-close fa-lg pull-right" ng-click="NewModalInstanceCtrl.closeModal()"></span>
+        <h3 class="modal-title" ng-bind-html="NewModalInstanceCtrl.getActiveSlideTitle()"></h3>
+      </div>
+      <div class="modal-body">
+        <div>
+          <uib-carousel>
+            <uib-slide ng-repeat="slide in NewModalInstanceCtrl.slides" active="slide.active">
+              <div class="newModalContentHTML" ng-bind-html="NewModalInstanceCtrl.getActiveSlideContent()"></div>
+            </uib-slide>
+          </uib-carousel>
+        </div>
+      </div>
+    </script>
+
+    <!--
+    /**
      * Navbar
      *
      */ -->
@@ -128,7 +148,7 @@
           </div>
         </div>
         <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" trish-modal filter="mywork/other">
+          <div class="well well-effect" new-modal>
             <img src="/images/mywork-other.png" alt="">
             <h2>other</h2>
           </div>
@@ -305,11 +325,15 @@
     <script src="scripts/services/config.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/modalinstance.js"></script>
+    <script src="scripts/controllers/newmodalinstance.js"></script>
     <script src="scripts/controllers/navigation.js"></script>
     <script src="scripts/directives/trishModal.js"></script>
+    <script src="scripts/directives/newModal.js"></script>
     <script src="scripts/services/contact.js"></script>
     <script src="scripts/services/alert.js"></script>
     <script src="scripts/services/mywork.js"></script>
+    <script src="scripts/services/newcontent.js"></script>
+    <script src="scripts/services/contentsource.js"></script>
     <script src="scripts/services/spreadsheet.js"></script>
     <!-- endbuild -->
 
