@@ -29,6 +29,7 @@ module.exports = function(config) {
       'bower_components/angular-scroll/angular-scroll.js',
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/wow/dist/wow.js',
+      'bower_components/typed.js/dist/typed.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

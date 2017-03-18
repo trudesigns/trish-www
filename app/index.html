@@ -28,7 +28,9 @@
      * Section 1
      */ -->
     <div id="splash-page">
-      <img id="splash" src="images/splash-bg/768.png" alt="Trish, UX and UI Designer">
+      <div class="splash-text-container">
+      <h1 class="trishtype"></h1>
+      </div>
       <div id="splash-page-bottom">
         <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="nav.toggleNav(true)">
           <i class="fa fa-angle-down"></i>
@@ -288,6 +290,16 @@
      ga('send', 'pageview');
     </script>
 
+    <!-- typed.js  -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+          Typed.new('.trishtype', {
+            strings: ["Life without the experience is just meaningless"],
+            typeSpeed: 0
+          });
+      });
+    </script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -297,6 +309,7 @@
     <script src="bower_components/angular-scroll/angular-scroll.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/wow/dist/wow.js"></script>
+    <script src="bower_components/typed.js/dist/typed.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
