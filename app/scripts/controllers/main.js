@@ -15,7 +15,7 @@
   .controller('MainCtrl', MainCtrl);
 
   /* @ngInject */
-  function MainCtrl (Contact, Alert) {
+  function MainCtrl (Contact, Alert, $window) {
     /* jshint validthis: true */
     var vm = this;
 
@@ -28,7 +28,7 @@
       new WOW().init();
 
       // typed js
-      angular.element(window)[0].addEventListener('DOMContentLoaded', function(){
+      $window.addEventListener('DOMContentLoaded', function(){
           Typed.new('.trishtype', {
             strings: ["LIFE WITHOUT THE EXPERIENCE IS JUST MEANINGLESS."],
             typeSpeed: 0,
