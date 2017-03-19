@@ -1,4 +1,4 @@
-/* global WOW Typed */
+/* global WOW, Typed */
 
 (function () {
   'use strict';
@@ -28,7 +28,7 @@
       new WOW().init();
 
       // typed js
-      document.addEventListener('DOMContentLoaded', function(){
+      angular.element(window)[0].addEventListener('DOMContentLoaded', function(){
           Typed.new('.trishtype', {
             strings: ["LIFE WITHOUT THE EXPERIENCE IS JUST MEANINGLESS."],
             typeSpeed: 0,
