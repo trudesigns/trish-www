@@ -37,6 +37,22 @@ body {
   padding: 20px 60px;
   text-align: left;
 }
+@media screen and (max-width: 620px) {
+  .newModalContentHTML {
+    padding: 20px;
+  }
+}
+.newModalContentHTML .modal-section {
+  margin: 50px 0;
+}
+@media screen and (max-width: 620px) {
+  .newModalContentHTML .modal-section h1 {
+    font-size: 26px;
+  }
+}
+.newModalContentHTML .modal-section p {
+  font-size: 16px;
+}
 .modal-content {
   background-color: #414042;
 }
@@ -218,34 +234,64 @@ body {
   text-align: center;
 }
 #splash-page .splash-text-container {
-  bottom: 35%;
-  padding: 0 10%;
-  position: absolute;
+  padding: 0 100px;
+  font-family: "Montserrat", 'Poiret One', cursive;
+  max-width: 1600px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   text-align: left;
 }
+@media screen and (max-width: 620px) {
+  #splash-page .splash-text-container {
+    padding: 0 20px;
+  }
+}
 #splash-page .splash-text-container h1 {
-  font-family: "Montserrat", 'Poiret One', cursive;
   font-weight: 900;
   font-size: 5vw;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 620px) {
   #splash-page .splash-text-container h1 {
-    font-size: 35px;
+    font-size: 31px;
   }
 }
 @media screen and (min-width: 1400px) {
   #splash-page .splash-text-container h1 {
-    font-size: 74px;
+    font-size: 70px;
   }
 }
 #splash-page .splash-text-container h2 {
   color: #F28FC5;
+  font-size: 3.55vw;
+  font-weight: 300;
   margin-bottom: 0;
+}
+@media screen and (max-width: 620px) {
+  #splash-page .splash-text-container h2 {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #splash-page .splash-text-container h2 {
+    font-size: 50px;
+  }
 }
 #splash-page .splash-text-container p {
   color: #F28FC5;
-  font-size: 30px;
+  font-size: 2.1vw;
+  font-weight: 200;
   letter-spacing: 0px;
+}
+@media screen and (max-width: 620px) {
+  #splash-page .splash-text-container p {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #splash-page .splash-text-container p {
+    font-size: 28px;
+  }
 }
 #splash-page #splash-page-bottom {
   bottom: 5%;
