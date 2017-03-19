@@ -4,15 +4,6 @@
 
 // -------------------------------------------------------------
 
-.newModalContentHTML {
-  background-color: #FFFFFF;
-  color: #000000;
-  padding: 20px 60px;
-  text-align: left;
-}
-
-// -------------------------------------------------------------
-
 .navbar-equal-height-fix {
   // This class is for when the nav gets its fixed-class
   // preventing the content below to "fall up" when it happens.
@@ -62,6 +53,13 @@ body {
 
 .modal {
   overflow-y: initial;
+}
+
+.newModalContentHTML {
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 20px 60px;
+  text-align: left;
 }
 
 .modal-content {
@@ -283,14 +281,19 @@ body {
 
   .splash-text-container {
     bottom: 35%;
-    left: 10%;
+    padding: 0 10%;
     position: absolute;
     text-align: left;
 
 
     h1 {
-      font-weight: bold;
+      font-family: "Montserrat", 'Poiret One', cursive;
+      font-weight: 900;
       font-size: 5vw;
+
+      @media screen and (max-width: 768px) {
+        font-size: 35px;
+      }
 
       @media screen and (min-width: 1400px) {
         font-size: 74px;
@@ -299,10 +302,13 @@ body {
 
     h2 {
       color: @color-trish-pink;
+      margin-bottom: 0;
     }
 
     p {
       color: @color-trish-pink;
+      font-size: 30px;
+      letter-spacing: 0px;
     }
   }
 
