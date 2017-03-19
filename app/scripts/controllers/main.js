@@ -15,7 +15,7 @@
   .controller('MainCtrl', MainCtrl);
 
   /* @ngInject */
-  function MainCtrl (Contact, Alert, $window) {
+  function MainCtrl (Contact, Alert) {
     /* jshint validthis: true */
     var vm = this;
 
@@ -25,15 +25,13 @@
 
     function _init () {
       _resetForm();
+      // WOW
       new WOW().init();
-
-      // typed js
-      $window.addEventListener('DOMContentLoaded', function(){
-          Typed.new('.trishtype', {
-            strings: ["LIFE WITHOUT THE EXPERIENCE IS JUST MEANINGLESS."],
-            typeSpeed: 0,
-            showCursor: false
-          });
+      // Typed
+      Typed.new('.trishtype', {
+        strings: ["LIFE WITHOUT THE EXPERIENCE IS JUST MEANINGLESS."],
+        typeSpeed: 0,
+        showCursor: false
       });
     }
 
