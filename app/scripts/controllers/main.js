@@ -1,4 +1,4 @@
-/* global WOW */
+/* global WOW Typed */
 
 (function () {
   'use strict';
@@ -26,6 +26,15 @@
     function _init () {
       _resetForm();
       new WOW().init();
+
+      // typed js
+      document.addEventListener('DOMContentLoaded', function(){
+          Typed.new('.trishtype', {
+            strings: ["LIFE WITHOUT THE EXPERIENCE IS JUST MEANINGLESS."],
+            typeSpeed: 0,
+            showCursor: false
+          });
+      });
     }
 
     function _resetForm () {
