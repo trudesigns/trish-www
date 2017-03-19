@@ -43,12 +43,12 @@ body {
   }
 }
 .newModalContentHTML .modal-section {
-  margin: 50px 0;
+  margin: 50px 0 100px;
 }
-@media screen and (max-width: 620px) {
-  .newModalContentHTML .modal-section h1 {
-    font-size: 26px;
-  }
+.newModalContentHTML .modal-section h1 {
+  color: #F28FC5;
+  font-size: 20px;
+  font-weight: bold;
 }
 .newModalContentHTML .modal-section p {
   font-size: 16px;
@@ -236,7 +236,7 @@ body {
 #splash-page .splash-text-container {
   padding: 0 100px;
   font-family: "Montserrat", 'Poiret One', cursive;
-  max-width: 1600px;
+  max-width: 1435px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
