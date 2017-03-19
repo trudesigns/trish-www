@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles/animate.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:200,300,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   </head>
   <body ng-app="trishApp" ng-controller="MainCtrl as ctrl">
@@ -28,7 +29,11 @@
      * Section 1
      */ -->
     <div id="splash-page">
-      <img id="splash" src="images/splash-bg/768.png" alt="Trish, UX and UI Designer">
+      <div class="splash-text-container">
+        <h1 class="trishtype"></h1>
+        <h2>-Trish Bellardine</h2>
+        <p>User Experience/User interface Designer</p>
+      </div>
       <div id="splash-page-bottom">
         <a du-smooth-scroll du-scrollspy offset="70" ng-href="#my-work" ng-click="nav.toggleNav(true)">
           <i class="fa fa-angle-down"></i>
@@ -50,6 +55,26 @@
           <uib-carousel>
             <uib-slide ng-repeat="slide in ModalInstanceCtrl.slides" active="slide.active">
               <img ng-src="{{ slide.image }}" style="margin:auto;">
+            </uib-slide>
+          </uib-carousel>
+        </div>
+      </div>
+    </script>
+
+    <!--
+    /**
+     * NEW Modal template
+     */ -->
+    <script type="text/ng-template" id="newModalContent.html">
+      <div class="modal-header">
+        <span class="close fa fa-close fa-lg pull-right" ng-click="NewModalInstanceCtrl.closeModal()"></span>
+        <h3 class="modal-title" ng-bind-html="NewModalInstanceCtrl.getActiveSlideTitle()"></h3>
+      </div>
+      <div class="modal-body">
+        <div>
+          <uib-carousel>
+            <uib-slide ng-repeat="slide in NewModalInstanceCtrl.slides" active="slide.active">
+              <div class="newModalContentHTML" ng-bind-html="NewModalInstanceCtrl.getActiveSlideContent()"></div>
             </uib-slide>
           </uib-carousel>
         </div>
@@ -110,6 +135,12 @@
       </div>
       <div class="row">
         <div class="col-md-3 col-sm-6 center">
+          <div class="well well-effect" new-modal>
+            <img src="/images/myWork_UX_projects.png" alt="">
+            <h2>ux projects</h2>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 center">
           <div class="well well-effect" trish-modal filter="mywork/websites">
             <img src="/images/mywork-websites.png" alt="">
             <h2>websites</h2>
@@ -125,12 +156,6 @@
           <div class="well well-effect" trish-modal filter="mywork/graphics">
             <img src="/images/mywork-graphics.png" alt="">
             <h2>graphics</h2>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 center">
-          <div class="well well-effect" trish-modal filter="mywork/other">
-            <img src="/images/mywork-other.png" alt="">
-            <h2>other</h2>
           </div>
         </div>
       </div>
@@ -152,7 +177,7 @@
           </div>
           <div class="about-wrapper">
             <div class="about-pre-content">
-              <p>“With out the experience, life is meaningless."</p>
+              <p>“Life without the experience is just meaningless.”</p>
               <p>- Me</p>
             </div>
             <div class="about-content">
@@ -190,7 +215,7 @@
           </div>
           <div class="about-wrapper">
             <div class="about-pre-content">
-              <p>“Its not just what it looks like and feels like, its how it works.”</p>
+              <p>“It's not just what it looks like and feels like, it's how it works.”</p>
               <p>- Steve Jobs</p>
             </div>
             <div class="about-content">
@@ -288,6 +313,17 @@
      ga('send', 'pageview');
     </script>
 
+    <!-- typed.js  -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+          Typed.new('.trishtype', {
+            strings: ["LIFE WITHOUT THE EXPERIENCE IS JUST MEANINGLESS."],
+            typeSpeed: 0,
+            showCursor: false
+          });
+      });
+    </script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -297,6 +333,7 @@
     <script src="bower_components/angular-scroll/angular-scroll.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/wow/dist/wow.js"></script>
+    <script src="bower_components/typed.js/dist/typed.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -305,11 +342,15 @@
     <script src="scripts/services/config.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/modalinstance.js"></script>
+    <script src="scripts/controllers/newmodalinstance.js"></script>
     <script src="scripts/controllers/navigation.js"></script>
     <script src="scripts/directives/trishModal.js"></script>
+    <script src="scripts/directives/newModal.js"></script>
     <script src="scripts/services/contact.js"></script>
     <script src="scripts/services/alert.js"></script>
     <script src="scripts/services/mywork.js"></script>
+    <script src="scripts/services/newcontent.js"></script>
+    <script src="scripts/services/contentsource.js"></script>
     <script src="scripts/services/spreadsheet.js"></script>
     <!-- endbuild -->
 
