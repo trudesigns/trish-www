@@ -3,22 +3,23 @@
 
   /**
   * @ngdoc function
-  * @name trishApp.controller:ModalInstanceCtrl
+  * @name trishApp.controller:NewModalInstanceCtrl
   * @description
   * # ModalinstanceCtrl
   * Controller of the trishApp
   */
   angular
   .module('trishApp')
-  .controller('ModalInstanceCtrl', ModalInstanceCtrl);
+  .controller('NewModalInstanceCtrl', NewModalInstanceCtrl);
 
   /* @ngInject */
-  function ModalInstanceCtrl ($uibModalInstance, slides, $filter) {
+  function NewModalInstanceCtrl ($uibModalInstance, slides, $filter) {
     /* jshint validthis: true */
     var vm = this;
 
     vm.closeModal = closeModal;
     vm.getActiveSlideTitle = getActiveSlideTitle;
+    vm.getActiveSlideContent = getActiveSlideContent;
 
     _init();
 
@@ -38,11 +39,14 @@
     function getActiveSlideTitle () {
       var slide = _getActiveSlide();
       if (slide) {
-        if (slide.link) {
-          return slide.text + ' ' + $filter('linky')(slide.link, '_blank');
-        } else {
-          return slide.text;
-        }
+        return slide.title;
+      }
+    }
+
+    function getActiveSlideContent () {
+      var slide = _getActiveSlide();
+      if (slide) {
+        return slide.content;
       }
     }
 
